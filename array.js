@@ -1,98 +1,3 @@
-//EVENT LISTENERS
-//add the name of the variable. parameter can be a click, mouseup, you can loock up 
-//different parameters. the (e) is a function that runs
-//everytime you do the eventListener.
-
-variableName.addEventListener('parameter1', (e) => console.log("Type in anything here"))
-
-
-input.addEventListener('click', (e) => console.log("YEEET"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//ARROW FUNCTIONS
-
-/* in arrow function, the function keyword is assumed. the sum function needs to be 
-assigned to a varible, so call it sum2. you need to create your own varible to store
-the function. The aroow takes place of the brackets & return keyword.*/
-
-
-function sum(a,b){
-    return a + b
-}
-
-let sum2 = (a,b) => a + b
-
-
-
-//Example 2
-//RULE:  if there is only one parameter, you can take away the parenthesis
-//anything to the left of the arrow function is the argument
-//anything to the right of the arrow function is the thing you are returning
-
-
-function isPositive(number){
-    return number >= 0
-}
-
-
-
-let isPositive2 = number => number >= 0 
-
-
-
-
-//Example 3
-
-
-function randomNumber() {
-    return Math.random
-}
-
-
-let randomNumber2 = () => Math.random
-
-
-
-
-//Example 4 
-
-
-document.addEventListener('click', function(){
-    console.log('Yeet!')
-})
-
-
-document.addEventListener('click', () => console.log('Yeet!'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Arrays
 
 
@@ -227,6 +132,11 @@ console.log(foundItem)
 
 
 
+
+
+
+
+
 //For Each
 
 //takes place of for loop syntax for arrays. it makes it a lot easier
@@ -234,6 +144,27 @@ console.log(foundItem)
 items.forEach((item) => {
     console.log(item.price)
 })
+
+
+
+
+//ANOTHER EXAMPLE 
+//takes the item & the index. console.log the item
+//used when working with APIs. we are going to loop through the array and get data back
+//and append them to the DOM
+
+
+let bestColors = ['green', 'blue', 'yellow', 'orange']
+
+bestColors.forEach((x,i) => console.log(x))
+
+
+
+
+
+
+
+
 
 
 
@@ -305,9 +236,3 @@ console.log(includesTwo)   //prints out true
 const includesTwo = items.includes(7)
 
 console.log(includesTwo)    // prints out false
- 
-
-
-
-
-
