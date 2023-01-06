@@ -236,3 +236,142 @@ console.log(includesTwo)   //prints out true
 const includesTwo = items.includes(7)
 
 console.log(includesTwo)    // prints out false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Class 29
+
+
+//Arrays
+//Your pokemon party order which is a list of pokemon has been leaked to Misty. Please create 
+//a function that reverses your list and prints it to the console. 
+
+function reverseParty(partyList){
+    console.log(partyList.reverse())
+}
+reverseParty(['bulba', 'char', 'pika', 'pika'])
+
+
+
+
+
+//Given two integer arrays a, b, both of length >= 1, create a program that returns true if 
+//the sum of the squares of each element in a is strictly greater than the sum of the cubes of 
+//each element in b.
+
+
+//two integer arrays are an array of numbers
+
+//both arrays are >= 1
+
+//square each number in an array
+
+// ** is shorthand for squaring
+// ** is cubing
+
+//0 is for the initial value
+
+
+//wherever you see the letter a     it is the first array
+//we are reducing it to one value
+
+//acc stands for accumlation the total 
+//c stands for current value
+
+//each time the program runs it will do 2 squared 2 until you get to the end of the array
+//2 * 2 = 4 <----keep for accumlator
+//2 * 2 = 4 
+//2 * 2 = 4        so 4 + 4 + 4 = 12              so a = 12
+
+
+// do the same thing for b, but b is cubed 
+// so b = 24
+
+
+//the function returns false because 12 is < 24 
+//so to get it true then change the array to be true
+
+
+function compareSquareAndCube(a,b){
+    return a.reduce((acc,c)=> acc + c **2, 0) > b.reduce((acc,c) => acc + c **3,0) 
+}
+console.log(compareSquareAndCube([2,2,2],[2,2,2]))
+
+
+
+
+
+
+
+
+//Return a new array consisting of elements which are multiple of their own index in input 
+//array (length > 1).
+// Some cases:
+// [22, -6, 32, 82, 9, 25] =>  [-6, 32, 25]
+// [68, -1, 1, -7, 10, 10] => [-1, 10]
+
+
+
+
+//so can the index of each item in the array go into each item in the array
+//for ex. can 0 go into 22? no
+//can 1 go into 6? yes
+//can 2 go into 82? yes         and so on for that array
+
+//use array filter method
+//because you want to filter out the items where the index can go through evenly.
+//filter grabs the element, index, & the array.
+//in this example, we only want the element index
+//e stands for element and i stands for index
+
+//in filter, we are creating a new array of numbers that are multiples of the index
+//so the new array is [-6, 32, 25]
+
+function isMultiple(arr){
+    return arr.filter((e,i) => e % i === 0)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Given an array of integers as strings and numbers, return the sum of the array values as 
+//if all were numbers.Return your answer as a number.
+
+
+
+function sumOfValues(arr){
+    return arr.reduce((acc,c) => acc + Number(c), 0)
+}
+
+console.log(sumOfValues(['5', 3, '2', 1]))
