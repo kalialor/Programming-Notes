@@ -13,6 +13,44 @@ In software development, the interface is the URL. We tell the URL to make a req
 //READ THE DOCUMENTATION 
 //The documentation will tell you what to do to get that data back
 
+fetch is the files we get back from the server. The stuff under it is us sorting through it
+
+
+
+
+
+
+HOW TO MAKE A QUERY PARAMETER
+https://www.semrush.com/blog/url-parameters/
+
+
+
+-To identify a URL parameter, refer to the portion of the URL that comes after the ?
+
+
+-URL parameters are made of a key and a value , separated by an equal sign. multiple parameters are 
+each then separated by an ampersand (&)
+
+ex. 
+
+https//www.example.com/widgets?color=blue&sort=newest
+
+
+? is the start of the parameter
+color=blue is a query parameter
+& is the symbol that seperates the 2 query parameters
+sort = newest is the 2nd query parameter
+
+
+
+
+
+
+
+
+
+
+
 
 
 FETCH TEMPLATE
@@ -232,3 +270,67 @@ function convertToNum(val){
         return Number(val)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//ANOTHER EXAMPLE
+//Class 28
+
+
+//Example fetch using DnD5eAPI - place subclasses in ul
+document.querySelector('button').addEventListener('click', getFetch) //button is a addEventListener
+//it runs a set of intructions called getFetch
+//function is a set of instructions
+
+
+
+function getFetch(){
+  const choice = document.querySelector('input').value //grabbing the value that is in my input
+  const url = `https://www.dnd5eapi.co/api/spells/${choice}`  //query parameter. plugging the value into the url
+
+
+  fetch(url)
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data.subclasses) //the subclasses array had 3 objects in it. 
+        //console.log(data.subclasses[0].name)
+        //console.log(data.subclasses[1].name)
+        data.subclasses.forEach( obj => {
+            console.log(obj.name) 
+            //create an li
+            const li = document.createElement('li') //create an element and storing it in the element li
+            //add text to li
+            li.textContent = obj.name
+            //append the li to the ul
+            document.querySelector('ul').appendChild(li)
+        })    
+        
+        
+        
+        // forEach will enable us to loop through the array and append it to the DOM. 
+        //obj stands for object we are grabbing from the array. The things in parenthesis is a parameter
+        //the for loop runs for each object in the array. each time it runs, it is grabbing the object 
+        //and the name property out of the object.
+
+
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+
+
+
+
+
+
