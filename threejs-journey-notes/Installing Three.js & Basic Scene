@@ -1,0 +1,60 @@
+Use a bundler rather than inputting the links on the HTML & JavaScript file.
+
+You can use a bundler to create a local server, manage dependencies, improve compatibility, support modules, optimize images, deploy on a server, minify the code, etc. 
+
+
+Webpack is currently the most popular bundler. It can handle most of your needs and provide extensive documentation and a constructive community.
+
+
+-Go to project folder in the terminal: npm install
+
+-npm install, installs dependencies like Three.js
+
+Then type in npm run dev to start the server
+
+
+
+
+
+Some notes:
+
+You don't need to add js file to HTML file. Webpack does it automatically.
+
+You need to load the CSS file to the JS file
+
+
+
+
+
+
+
+
+BASIC SCENE
+
+
+We want to get our scene back in this Webpack template.
+
+First, you need to add the <canvas> to the src/index.html file:
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Webpack</title>
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+</body>
+</html>
+
+
+
+
+
+
+
+
