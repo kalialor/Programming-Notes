@@ -1,0 +1,227 @@
+Animations, when using Three.js, work like stop motion. You move the objects, and you do a render. Then you move the objects a little more, and you do another render. Etc. The more you move the objects between renders, the faster they'll appear to move.
+
+
+The screen you are looking at runs at a specific frequency. We call that a frame rate. The frame rate mostly depends on the screen, but the computer itself has limitations. Most screens run at 60 frames per second. If you do the maths, that means about a frame every 16ms. But some screens can run much faster, and when the computer has difficulties processing things, it'll run more slowly.
+
+
+We want to execute a function that will move objects and do the render on each frame regardless of the frame rate.
+
+The native JavaScript way of doing so is by using the window.requestAnimationFrame(...) method.
+
+
+
+
+
+
+
+
+
+The primary purpose of requestAnimationFrame is not to run code on each frame.
+
+
+
+
+
+*******requestAnimationFrame will execute the function you provide on the next frame. 
+
+
+But then, if this function also uses requestAnimationFrame to execute that same function on the next frame, you'll end up with your function being executed on each frame forever which is exactly what we want.
+
+
+
+
+you can change the mesh.rotation.y to position, x,y,z   -= 
+
+
+
+
+/**
+ * Animate
+ */
+const tick = () =>
+{
+    // Update objects
+    mesh.rotation.y += 0.01                 
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We need to adapt the animation to the framerate. because different computers have different frame rates and we need to sync it all together. 
+
+we need to know how much time it's been since the last tick.
+
+
+First, we need a way to measure time. In JS, you can use Date.now() to get the current timestamp:
+
+
+let time = Date.now()
+
+
+
+What you need now is to subtract the current timestamp to that of the previous frame to get what we call deltaTime and use this value when animating objects:
+
+let time = Date.now()
+
+
+const tick = () =>
+{
+    //Time
+   const currentTime = Date.now()
+   const deltaTime = currentTime - time
+   time = currentTime
+
+    //Update objects
+    mesh.rotation.y += 0.01 * deltaTime
+
+}
+tick()
+
+
+
+
+
+The cube should rotate faster because the deltaTime should be around 16 if your screen is running at 60fps, so feel free to reduce it by multiplying the value.
+
+Now that we base our rotation on how much time was spent since the last frame, this rotation speed will be the same on every screen and every computers regardless of the frame rate.
+
+
+
+
+
+
+
+
+
+
+
+ANOTHER METHOD
+
+Using Clock
+
+it handles time calculations. 
+
+You simply have to instantiate a clock variable and use the built-in methods like 
+getElapsedTime()  This method will return how many seconds have passed since the clock was created
+
+
+
+const clock = new THREE.Clock()
+
+const tick = () => 
+{
+    const elapsedTime = clock.getElapsedTime()
+    
+    //Update objects
+    mesh.position.y = Math.cos(elapsedTime)
+    camera.position.y = Math.sin(elapsedTime)
+    camera.lookAt(mesh.position)
+
+
+    //Render
+    renderer.render(scene, camera)
+    
+    //Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+
+}
+tick()
+
+
+
+
+you can also change the mesh property to camera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GSAP
+
+
+Sometimes you want to animate your scene in a very specific way that will require using another library. There are a ton of animation libraries, but a very famous one is GSAP.
+
+To add GSAP to our Webpack project, we can use the dependency manager provided with Node.js called npm.
+
+In your terminal (while the server is not running or by using another terminal window on the same folder), run npm install --save gsap
+
+
+The --save argument saves the dependency in the package.json so the module can be fetched if we do an npm install.
+
+
+GSAP is now available in the node_modules/ folder, and we can import it in our script.js:
+
+
+
+import './style.css'
+import * as THREE from 'three'
+import gsap from 'gsap'
+
+
+
+
+
+
+
+
+Comment the code related to the previous animations but keep the tick function with the render. Then you can create what we call a tween (an animation from A to B) using gsap.to(...):
+
+
+
+//Animations
+
+
+//you can change up the values in duration & delay.
+//x:2 is the you specifying the destination of the property
+//you can change that to y, or z
+
+gsap.to(mesh.position, { duration: 1, delay: 1, x:2 })
+
+const tick = () => 
+{
+    //Render
+    renderer.render(scene,camera)
+
+    //Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+tick()
+
+
+
+
+
+
+
+

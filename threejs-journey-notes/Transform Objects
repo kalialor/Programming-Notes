@@ -1,0 +1,263 @@
+There are 4 properties to tranform objects in our scene: 
+
+    position (to move the object)
+    scale(to resize the object)
+    rotation(to rotate the object)
+    quaternion(to also rotate the object)
+
+
+
+the position property possesses 3 essential properties: x,y,z
+
+
+ex: 
+you can play around with the values
+make sure you put this before the render
+
+mesh.position.x = 0
+mesh.position.y = 0
+mesh.postion.z = 0 
+
+
+position property is a vector3 you can rewrite the above like this: 
+mesh.position.set(0,0,0)         <---x,y,z
+                                           
+                                           
+
+                                           
+                                           
+                                           
+   
+                                           
+                                           
+                                           
+                                           
+Axes Helper-helps you position things in space
+                                           
+
+ 
+const axesHelper = new THREE.AxesHelper(2)    <---2 is the length of the lines
+scene.add(axesHelper)                                          
+                                          
+
+
+
+
+
+
+//Scale
+a scale is also a Vector3 
+changing the size of the object
+
+
+
+ex:
+you can change the values
+
+mesh.scale.x = 2
+mesh.scale.y = 0.25
+mesh.scale.z = 0.5
+
+
+since it's Vector3 you can rewrite it like this: 
+mesh.scale.set(2, 0.25,0.5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Rotate Objects
+you can you rotation or quaternion property. Three.js supports both, and updating
+one will automatically update the other. It's just a matter of which one you
+prefer.
+
+
+
+
+The rotation prety also has x,y,z properties, but instead of Vector3, it's an
+Euler. When you change the x, y, and z properties of a Euler, you can imagine putting a stick through your object's center in the axis's direction and then rotating that object on that stick.
+
+If you spin on the y axis, you can picture it like a carousel.
+
+If you spin on the x axis, you can imagine that you are rotating the wheels of a car you'd be in.
+
+And if you rotate on the z axis, you can imagine that you are rotating the propellers in front of an aircraft you'd be in.
+
+
+The value of these axes is expressed in radians. If you want to achieve half a rotation, you'll have to write something like 3.14159... You probably recognize that number as π. In native JavaScript, you can end up with an approximation of π using Math.PI.
+
+Comment the scale and add an eighth of a complete rotation in both x and y axes:
+
+
+mesh.rotation.x = Math.PI * 0.25          <--does a full rotation
+mesh.rotation.y = Math.PI                 <---does half a rotation
+
+
+
+
+
+While Euler is easier to understand, this order problem can cause issues. And this is why most engines and 3D softwares use another solution named Quaternion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Look at this!
+
+This method lets you ask an object to look at something. So in a game. 
+The object will autmatically rotate its -z axis toward the target you provided.
+You can use it to rotate the camera toward an object, orientate a cannon to face an enemy, or move the chatacter's eyes to an object. 
+
+It is a Vector3, so written like this:
+
+camera.lookAt(new THREE.Vector3(0, -1, 0))
+
+
+
+
+
+
+
+
+
+We can also use any existing Vector3 such as the mesh's position, but that will result in the default camera position because our mesh is in the center of the scene.
+
+camera.lookAt(mesh.position)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Combining transformations 
+
+  
+You can combine the position, the rotation (or quaternion), and the scale in any order. The result will be the same. It's equivalent to the state of the object.
+
+Let's combine all the transformations we tried before:
+
+mesh.position.x = 0.7
+mesh.position.y = - 0.6
+mesh.position.z = 1
+mesh.scale.x = 2
+mesh.scale.y = 0.25
+mesh.scale.z = 0.5
+mesh.rotation.x = Math.PI * 0.25
+mesh.rotation.y = Math.PI * 0.25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Grouping Ojects: this allows you to change one value instead of changing each individual value
+use the group class
+
+
+
+
+
+
+
+
+
+
+
+Because the Group class inherits from the Object3D class, it has access to the previously-mentioned properties and methods like position, scale, rotation, quaternion, and lookAt.
+
+Comment the lookAt(...) call and, instead of our previously created cube, create 3 cubes and add them to a Group. Then apply transformations on the group:
+
+
+
+/**
+ * Objects
+ */
+const group = new THREE.Group()
+group.scale.y = 2
+group.rotation.y = 0.2
+scene.add(group)
+
+const cube1 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube1.position.x = - 1.5
+group.add(cube1)
+
+const cube2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube2.position.x = 0
+group.add(cube2)
+
+const cube3 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+cube3.position.x = 1.5
+group.add(cube3)
+JavaScript
+
+
+
+
+
+
+
+
+
+
+

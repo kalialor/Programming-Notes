@@ -1,0 +1,473 @@
+Along with PerspectiveCamera, there are also other types of cameras:
+
+
+Camera  
+The Camera class is what we call an abstract class. You're not supposed to use it directly, but you can inherit from it to have access to common properties and methods. Some of the following classes inherit from the Camera class.
+
+ArrayCamera  
+The ArrayCamera is used to render your scene multiple times by using multiple cameras. Each camera will render a specific area of the canvas. You can imagine this looking like old school console multiplayer games where we had to share a split-screen.
+
+StereoCamera  
+The StereoCamera is used to render the scene through two cameras that mimic the eyes in order to create what we call a parallax effect that will lure your brain into thinking that there is depth. You must have the adequate equipment like a VR headset or red and blue glasses to see the result.
+
+CubeCamera  
+The CubeCamera is used to get a render facing each direction (forward, backward, leftward, rightward, upward, and downward) to create a render of the surrounding. You can use it to create an environment map for reflection or a shadow map. We'll talk about those later.
+
+OrthographicCamera  
+The OrthographicCamera is used to create orthographic renders of your scene without perspective. It's useful if you make an RTS game like Age of Empire. Elements will have the SAME SIZE on the screen regardless of their distance from the camera.
+
+PerspectiveCamera  
+The PerspectiveCamera is the one we already used and simulated a real-life camera with perspective.
+
+We are going to focus on the OrthographicCamera and the PerspectiveCamera.
+
+
+
+
+
+All the Parameters of the PerspectiveCamera:
+
+
+
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 100)
+
+
+
+
+-remember, the first parameter is FOV. the usual is between 45-75
+
+
+the second parameter is called aspect ratio which is width / height
+
+    they are called here: 
+
+        const sizes = {
+            width: 800,
+            height: 600,
+        }
+
+
+
+
+
+
+
+The 3rd and 4th parameter are called near and far. Any object or part of the object closer to the camera than the near value or further away from the camera than the far value will not show up on the render. 
+
+
+You can see that like in those old racing games where you could see the trees pop up in the distance.
+
+
+
+While you might be tempted to use very small and very large values like 0.0001 and 9999999 you might end up with a bug called z-fighting where two faces seem to fight for which one will be rendered above the other.
+
+
+Try to use reasonable values and increase those only if you need it. In our case, we can use 0.1 and 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OrthographicCamera
+
+
+While we will not use this type of camera for the rest of the course, it can be useful for specific projects.
+
+
+
+The OrthographicCamera differs from the PerspectiveCamera by its lack of perspective, meaning that the objects will have the same size regardless of their distance from the camera.
+
+
+
+The parameters you have to provide are very different from the PerspectiveCamera.
+
+Instead of a field of view, you must provide how far the camera can see in each direction (left, right, top and bottom). Then you can provide the near and far values just like we did for the PerspectiveCamera.
+
+Comment the PerspectiveCamera and add OrthographicCamera . Keep the position update and lookAt(...) call:
+
+const camera = new THREE.OrthographicCamera(- 1, 1, 1, - 1, 0.1, 100)
+
+
+
+
+
+
+
+
+
+As you can see, there is no perspective, and the sides of our cube seem parallel. The problem is that our cube doesn't look cubic.
+
+That is due to the values we provided for the left, right, top, and bottom which are 1 or - 1, meaning that we render a square area, but that square area will be stretched to fit our rectangle canvas and our canvas isn't a square.
+
+We need to use the canvas ratio (width by height). Let's create a variable named aspectRatio (just like the PerspectiveCamera) and store that ratio in it:
+
+const aspectRatio = sizes.width / sizes.height
+const camera = new THREE.OrthographicCamera(- 1 * aspectRatio, 1 * aspectRatio, 1, - 1, 0.1, 100)
+
+
+
+
+This results in a render area width larger than the render area height because our canvas width is larger than its height.
+
+We now have a cube that looks like a cube.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Custom Controls
+
+
+What we want to do now is control the camera with our mouse. First, we need to know the mouse coordinates. We can do that by listening to the mousemove event with addEventListener:
+
+The coordinates will be located in the argument of the callback function as event.clientX and event.clientY:
+
+//Cursor
+
+window.addEventListener('mousemove', (event) =>
+{
+    console.log(event.clientX, event.clientY)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We could use those values, but I recommend adjusting them. By adjusting, I mean to have a 1 amplitude and that the value can be both negative and positive.
+
+If we only focus on the x value, that would mean that:
+
+if your cursor is on the far left of the canvas, you should get - 0.5
+if your cursor is at the center of the canvas, you should get 0
+if your cursor is at the far right of the canvas, you should get 0.5
+While this is not mandatory, it helps to have clean values like that.
+
+Just like the size variable, we will create a cursor variable with default x and y properties and then update those properties in the mousemove callback:
+
+// Cursor
+const cursor = {
+    x: 0,
+    y: 0
+}
+
+window.addEventListener('mousemove', (event) =>
+{
+    cursor.x = event.clientX / sizes.width - 0.5
+    cursor.y = - (event.clientY / sizes.height - 0.5)
+})
+
+
+The -() around the cursor.y makes the box move and not the camera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Built-in Controls
+
+If you type "controls" in the Three.js documentation, you'll see that there are a lot of pre-made controls. We will only use one of them for the rest of the course, but it can be interesting to know their role.
+
+DeviceOrientationControls  
+DeviceOrientationControls will automatically retrieve the device orientation if your device, OS, and browser allow it and rotate the camera accordingly. You can use it to create immersive universes or VR experiences if you have the right equipment.
+
+FlyControls  
+FlyControls enable moving the camera like if you were on a spaceship. You can rotate on all 3 axes, go forward and go backward.
+
+FirstPersonControls  
+FirstPersonControls is just like FlyControls, but with a fixed up axis. You can see that like a flying bird view where the bird cannot do a barrel roll. While the FirstPersonControls contains "FirstPerson," it doesn't work like in FPS games.
+
+PointerLockControls  
+PointerLockControls uses the pointer lock JavaScript API. This API hides the cursor, keeps it centered, and keeps sending the movements in the mousemove event callback. With this API, you can create FPS games right inside the browser. While this class sounds very promising if you want to create that kind of interaction, it'll only handle the camera rotation when the pointer is locked. You'll have to handle the camera position and game physics by yourself.
+
+OrbitControls  
+OrbitControls is very similar to the controls we made in the previous lesson. You can rotate around a point with the left mouse, translate laterally using the right mouse, and zoom in or out using the wheel.
+
+TrackballControls  
+TrackballControls is just like OrbitControls but there are no limits in terms of vertical angle. You can keep rotating and do spins with the camera even if the scene gets upside down.
+
+TransformControls  
+TransformControls has nothing to do with the camera. You can use it to add a gizmo to an object to move that object.
+
+DragControls  
+Just like the TransformControls, DragControls has nothing to do with the camera. You can use it to move objects on a plane facing the camera by drag and dropping them.
+
+We will only use the OrbitControls but feel free to test the other classes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OrbitControls:
+
+
+OrbitControls class is part of those classes that are not available by default in the THREE variable. That decision helps to reduce the weight of the library. 
+This is where our Webpack template comes in. 
+
+
+
+The OrbitControls class may not be available in the THREE variable; it is still located in the dependencies folder. To import it, you must provide the path from inside the /node_modules/ folder, which is /three/examples/jsm/controls/OrbitControls.js:
+
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
+
+
+
+You can now instantiate a variable using the class OrbitControls (without the THREE.) and make sure to do that after creating the camera.
+
+For it to work, you must provide the camera and the element in the page that will handle the mouse events as parameters:
+
+// Controls
+const controls = new OrbitControls(camera, canvas)
+
+
+
+
+
+
+
+
+
+
+Target
+
+
+By default, the camera is looking at the center of the scene. We can change that with the target property.
+
+This property is a Vector3, meaning that we can change its x, y and z properties.
+
+If we want the OrbitControls to look above the cube by default, we just have to increase the y property:
+
+controls.target.y = 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Damping
+
+
+Damping will smooth the animation by adding some kind of acceleration and friction formulas. 
+To enable damping, switch the enableDamping property of controls to true. 
+In order to work properly, the controls also needs to be updated on each frame by calling 
+ constrols.update() 
+
+
+
+
+// Controls
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
+
+// ...
+
+const tick = () =>
+{
+    // ...
+
+    // Update controls
+    controls.update()
+
+    // ...
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
