@@ -1,0 +1,4 @@
+Our canvas currently has a fixed resolution of 800x600. You don't necessarily need your WebGL to fit the whole screen, but if you want an immersive experience, it might be better.
+
+First, we would like to have the canvas take all available space. Then, we need to make sure that it still fits if the user resizes their window. Finally, we need to give the user a way to experiment with the experience in fullscreen.
+
