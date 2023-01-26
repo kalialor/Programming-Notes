@@ -1,0 +1,16 @@
+USING VITE: 
+
+In terminal type in: npm create vite@latest
+    Then follow the instructions
+
+
+
+
+
+
+
+Not using VITE: 
+
+In terminal type in: npx create-react-app NAME OF PROJECT FOLDER
+cd NAME OF PROJECT FOLDER
+npm start
