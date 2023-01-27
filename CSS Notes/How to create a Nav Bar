@@ -1,0 +1,42 @@
+NavBar.js 
+
+
+export default function Navbar() {
+    return (
+        <nav>
+            <img src={logo} className="nav--logo" />
+            <ul className="navbarlist">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    )
+}
+
+
+
+
+
+
+index.css
+
+
+nav {
+  height: 70px;
+  display: flex;
+  padding: 20px 36px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.navbarlist {
+  list-style: none;
+  display: flex;
+}
+
+.navbarlist > li {
+  padding: 20px;
+}

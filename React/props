@@ -1,0 +1,75 @@
+Joke.js
+
+import React from "react"
+
+export default function Joke(props) {
+    console.log(props)                <---console.log the object from App.js
+    return (
+        <div>
+            <h3>{props.setup}</h3>
+            <p>{props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+                                           
+
+
+
+
+
+
+
+
+
+App.js
+
+import React from "react"
+import Joke from "./Joke"
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!" 
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+            />
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+index.js
+
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))

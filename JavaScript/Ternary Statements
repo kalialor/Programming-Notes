@@ -1,0 +1,15 @@
+Ternary Statements
+
+
+const age = 15;
+if (age >= 18){
+    console.log("is over age")
+}else{
+    console.log("is under age")
+}
+
+
+age >= 18 ? console.log("is over age") : console.log("is under age")
+
+? stands for then 
+: stands for else 
