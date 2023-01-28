@@ -85,3 +85,72 @@ export default [
     }
 ]
 
+
+
+
+
+
+
+
+
+ANOTHER EXAMPLE:
+Our Current Conundrum
+
+
+
+
+
+import React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    const thingsArray = ["Thing 1", "Thing 2"]
+    
+    
+    const thingElements = things.Array.map(things => <p key={thing}>{thing}</p>)
+    
+    return(
+        <div>
+            <button>Add Item</button>
+            {thingElement}
+        </div>
+        
+   )
+}
+
+ReactDOM.render(App />, document.getElementbyId('root'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

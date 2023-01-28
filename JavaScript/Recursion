@@ -1,0 +1,101 @@
+Recursion is a function that calls itself in order to accomplish a task, while the base case is where the recursion stops. 
+
+ex in Python: 
+    def countdown(n): 
+        if n == 0: # base case
+            print("Blast off!")
+        else: 
+            print(n)
+            countdown(n-1) # recursive case
+    countdown(3)
+
+        Output:
+        3
+        2
+        1
+        Blast off!
+
+
+in this example, the function "countdown" is called with an input of 3. The first thing the function does is check if the input is 0, which is the base case. If it is, it prints "Blast off!" and the function ends. If the input is not 0, it prints the current input number, then calls itself again with the input decremented by 1. This process repeats until the input reaches 0, at which point the base case is reached and the function ends. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+One example of recursion in JavaScript is a function that calculates the factorial of a given number. The function calls itself repeatedly, each time with a slightly simpler version of the original problem, until it reaches the base case where it returns the final result.
+
+
+function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(5)); // 120
+
+
+In this example, the function factorial takes a single argument n and defines a base case where n is 0, in which case the function returns 1. If n is not 0, the function calls itself with the argument n-1 and multiplies that result by n before returning the final value. Each time the function is called, it operates on a slightly simpler version of the original problem (namely, with n-1), until the base case is reached and the final result is returned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function sumArray(arr) {
+  if (arr.length === 0) {
+    return 0; // base case
+  } else {
+    return arr[0] + sumArray(arr.slice(1)); // recursive call
+  }
+}
+console.log(sumArray([1, 2, 3, 4, 5])); // 15
+
+
+
+In this example, the function sumArray takes an array as its argument and defines a base case where the array is empty, in which case the function returns 0. If the array is not empty, the function takes the first element of the array and adds it to the result of calling the function recursively with the remaining elements of the array. Each time the function is called, it operates on a slightly simpler version of the original problem (namely, with the array with one element less), until the base case is reached and the final result is returned.
+
+It's a simple example and helps to understand the base case and recursive call.
