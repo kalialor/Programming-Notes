@@ -1,0 +1,146 @@
+How to install debug UI:
+
+npm install --save lil gui
+
+
+
+
+This put it in the /node_modules/ folder and we can import it in our script.js 
+
+import './style.css'
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import gsap from 'gsap'
+import * as dat from 'lil-gui'
+
+
+
+
+
+You can now instantiate Dat.GUI:
+
+/**
+ * Debug
+ */
+const gui = new dat.GUI()
+JavaScript
+
+
+
+
+
+
+
+
+This will result in an empty panel on the top right corner of the screen.
+
+There are different types of elements you can add to that panel:
+
+Range —for numbers with minimum and maximum value
+Color —for colors with various formats
+Text —for simple texts
+Checkbox —for booleans (true or false)
+Select —for a choice from a list of values
+Button —to trigger functions
+Folder —to organize your panel if you have too many elements
+
+
+
+
+
+
+
+
+Add elements to Debug UI:
+
+gui.add(...)
+
+
+ex. 
+gui.add(mesh.position,'y')
+gui.add(mesh.position, 'y').min(-m).max(3).step(0.01)
+
+
+
+If you don't like having too many methods chained in one line, you can simply add line breaks:
+
+gui
+    .add(mesh.position, 'y')
+    .min(- 3)
+    .max(3)
+    .step(0.01)
+
+
+
+
+
+
+
+
+
+
+
+
+
+To change the label, use the the name(...) method:
+
+gui
+    .add(mesh.position, 'y')
+    .min(- 3)
+    .max(3)
+    .step(0.01)
+    .name('elevation')
+
+
+
+
+
+
+
+
+
+Dat.GUI will automatically detect what kind of property you want to tweak and use the corresponding element. A good example is the visible property of Object3D. It is a boolean that, if false, will hide the object:
+
+gui.add(mesh, 'visible')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,899 @@
+.NET Framework is Windows-only, whereas .NET core can run on Windows, Mac, & Linux.
+
+
+
+
+in the terminal in VSCode type in: dotnet new console 
+    -this will create a new C# application
+    -you should see: restore suceeded. 
+
+
+
+terminal command: dotnet run 
+    -this will execute the currently loaded C# program
+
+
+
+
+
+
+using System;
+
+namespace MyFirstProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+Keyboard Shortcut for multiline comments:
+    -highlight the code you want to comment out
+    - CTRL K     then CTRL C    
+
+
+
+
+To uncomment multiline comments: 
+    -highlight the code you want to comment out
+    -CTRL K     then CTRL U 
+
+
+
+
+
+
+
+
+
+
+Bit is the smallest unit of information that can be stored on a computer
+Bit consists of either 0 or 1
+A group of 8 bits is called a Byte
+
+ex:
+1 1 0 0 1 1 0 1
+
+
+8 bits/1 byte
+
+
+
+
+
+
+
+
+
+
+
+
+Console.WriteLine()       //this will print whatever you provide it into the console
+
+
+
+
+
+
+String Literal:
+  "hello"
+   -whatever falls between ""   double quotes
+
+
+
+
+
+Verbatim:
+    the console will read the line verbatim.
+ ex:
+    string str2 = @"c:\myfolder\test.txt";
+
+            -in that line, you need the @ symbol so the console can read the \ and not read it as an escape symbol
+
+
+
+
+
+
+
+
+Interpolated:
+    -can use variables inside of the string
+ex:
+    string str1 = "world";
+    string str3 = $"hello {str1}";   //hello world
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C# Numbers
+
+
+Whole Numbers (int, short, long, uint)
+        -Long suffix 'L'
+
+
+Decimal Numbers (float, double, decimal)
+        -Float suffix 'F'
+        -Decimal suffix 'M'
+
+
+
+
+
+
+            Whole Numbers
+
+Type       Bytes          MinValue                  MaxValue
+int         4         -2147483648                 2147483647
+short       2            -32768                     32767
+long        8        -9223372036854775808         9223372036854775807
+uint        8               0                        4294967295
+
+
+
+
+what type of variable you need to choose depends on your context and whatever programming task at your hand. say you have just a zip code and you can can cover it within this range, then you can consideer using a short. 
+
+for an employee number which is much bigger, consider using int
+
+
+
+
+
+            Decimal Numbers
+
+Type       Bytes                  Min Value                Max Value
+float        4                 -3.4028235E+38            3.4028235E+38
+double       8                -1.797693148623157E+308     1.7976931348623157E+308
+decimal      16             -79228162514264337             7922816251326433759
+
+
+
+
+
+
+EXAMPLE:
+
+
+-readLine will read what is behind it. in this case it is the console
+- int.Parse      (will accept a string and turns it into an integer
+
+
+
+
+
+
+
+using System;
+
+namespace Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Whole Numbers
+            int i = 10;
+            Console.WriteLine(i);
+
+            int j = int.Parse(Console.ReadLine(); 
+            Console.WriteLine(j);
+
+
+            short s = 100;
+            long l = 1000;
+            uint ui = 12;
+
+
+
+            //Decimal Numbers
+            float f = 10.5f;
+            double d = 123.99;
+            decimal dd = 345.00m;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+C# Boolean
+
+-bool stands for boolean
+
+-for the 2nd example, bool.Parse will read the boolean as a string and not as a boolean
+
+
+
+using System;
+
+namespace MyFirstProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool b = true;
+
+            console.WriteLine(b);       //type in dotnet run in the terminal; true
+
+            
+            //2nd example
+            b = bool.Parse(Console.ReadLine(); 
+            Console.WriteLine(b);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arrays-a collection, used to store multiple values, but they belong to the same type
+
+
+
+Syntax: 
+    T name = new T[] {...};
+
+
+
+
+Example:
+    int[] myNumbers = new int[] {15, 8, 7, 56,10, 78};
+    Console.WriteLine(myNumbers[2]);
+
+
+    //ANOTHER FORMAT:
+    int[] myNumbers;
+    myNumbers = new int[6];
+    myNumbers[0] = 15
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace MyFirstProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] days = new string[]
+                {
+                   "Sunday",
+                   "Monday",
+                   "Tuesday",
+                   "Wednesday",
+                   "Thursday",
+                   "Friday",
+                   "Saturday",
+                   "Sunday"
+                };
+            Console.WriteLine(days[0]);    //go into terminal and type in dotnet run
+            Console.WriteLine(days[1]);    // Sunday, Monday, Tuesday will print
+            Console.WriteLine(days[2]);
+
+
+            //2nd format
+
+            string[] daysNew;
+            daysNew = new string[7];
+            daysNew[0] = "Sunday";
+            daysNew[1] = "Monday";
+            daysNew[2] = "Tuesday";
+            daysNew[3] = "Wednesday";
+            daysNew[4] = "Thursday";
+            daysNew[5] = "Friday";
+            daysNew[6] = "Saturday";
+
+            Console.Write{daysNew[0]);   //this will bring Sunday Monday
+            Console.Write(daysNew[1]);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+String Interpolation: $
+
+int numOfApples = 5;
+//string katy = $"Katy has {numOfApples} apples. ";
+string katy = "Katy has " + numOfApples + " apples.";
+Console.WriteLine(katy);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operators
+
+
+
+
+/* C# Unary Operators
+ * prefix operator, which means that the value of a gets incremented FIRST 
+ * before getting assigned to b. 
+ * postfix operator, value is getting assigned first. Then increment. 
+ * Same for -- operator
+ 
+ */
+
+int a, b;
+
+a = 1;
+b = ++a;
+Console.WriteLine($"Prefix ++ , {a}, b = {b}"); // 2, 2
+
+
+a = 1;
+b = a++;
+Console.WriteLine($"Postfix ++ , {a}, b = {b}"); // 2, 1
+
+a = 1;
+b = --a;
+Console.WriteLine($"Prefix -- , {a}, b = {b}"); // 0, 0
+
+
+a = 1;
+b = a--;
+Console.WriteLine($"Postfix -- , {a}, b = {b}"); // 0, 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mathematical Operators
+ * the division is only going to show the whole number for this example
+ * because of 'int' if you want decimal then use float 'f'
+ * ALWAYS use 'f' after declaring a decimal number!!!
+ * */
+
+int a = 1, b = 2;
+
+Console.WriteLine($"a + b = {a + b}");
+Console.WriteLine($"a - b = {a - b}");
+Console.WriteLine($"a * b = {a * b}");
+Console.WriteLine($"a / b = {a / b}");
+Console.WriteLine($"a % b = {a % b}");
+
+float c = 5, d = 7;
+
+Console.WriteLine($"c / d = {c / d}");
+
+float e = 5.5f, f = 9;
+
+Console.WriteLine($"e / f = {e / f}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Assignment Operators
+ * using $ {} is called string interpolation
+ * 'a' is used throughout the program. not just one instance.
+ **/
+
+int a;
+
+a = 10;
+
+a += 5;
+Console.WriteLine($"a += 5 : {a}");
+
+a -= 5;
+Console.WriteLine($"a -= 5 : {a}");
+
+a *= 5;
+Console.WriteLine($"a *= 5 : {a}");
+
+a /= 5;
+Console.WriteLine($"a /= : {a}");
+
+
+
+
+
+
+
+
+
+
+/* Comparison Operators
+ * 
+ **/
+
+int a = 2;
+
+Console.WriteLine($"a == 10 : {a == 10}"); //false
+Console.WriteLine($"a != 10 : {a != 10}"); //true
+Console.WriteLine($"a > 10 : {a > 10}"); //false
+Console.WriteLine($"a < 10 : {a < 10}"); //true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conditional Operators
+ * && stands for 'AND'
+ * || stands for 'OR'
+ * 
+ *&& returns true if both operands are true
+ *|| returns true if at least ONE operand is true
+ **/
+
+bool a = false;
+bool b = true;
+
+Console.WriteLine($"a b : {a} {b}"); //a b : false true
+Console.WriteLine($" a && b : {a && b}"); //false
+Console.WriteLine($"a || b : {a || b}"); //true
+
+
+a = true;
+b = true;
+Console.WriteLine($"a b : {a} {b}"); //a b : true true
+Console.WriteLine($"a && b {a && b}"); //true
+Console.WriteLine($"a || b {a || b}"); //true
+
+a = false;
+b = false;
+Console.WriteLine($"a b : {a} {b}"); //a b : false false
+Console.WriteLine($"a && b : {a && b}"); //false
+Console.WriteLine($"a || b : {a || b}"); //false
+
+
+
+
+
+
+
+
+
+
+
+
+
+//if else statements
+
+/*Write a C# program to get favorite dogBreed from user and print the dogBreed
+ * name to the console
+*/
+
+
+Console.WriteLine("Enter your favorite dog breed: ");
+string dogBreed = Console.ReadLine();
+
+if(dogBreed == "pomsky")
+{
+    Console.WriteLine("Favorite dog breed is pomsky");
+}
+else if(dogBreed == "pug")
+{
+    Console.WriteLine("Favorite Breed is pug.");
+}
+else if(dogBreed =="german shepherd")
+{
+    Console.WriteLine("Favorite Breed is German Shepherd.");
+}
+else
+{
+    Console.WriteLine("Other options not listed.");
+}
+Console.WriteLine("End of program");
+
+
+
+
+
+
+
+
+
+
+
+/*Switch Statements
+ * 
+ * Write a C# program to get favorite dogBreed from user and print the dogBreed
+ * name to the console
+ * 
+ * Don't forget about the 'break' statement after each case. This prevents fall-
+ * through to the next case. Fall-through occurs when there is no 'break'
+ * statement, and the code execution continues to the next case block, even if
+ * the condition doesn't match.
+*/
+
+
+Console.WriteLine("Enter your favorite dog breed: ");
+string dogBreed = Console.ReadLine();
+
+switch(dogBreed)
+{
+    case "pomsky":
+        {
+            Console.WriteLine("Favorite dog breed is pomsky.");
+            break;
+        }
+    case "pug":
+        {
+            Console.WriteLine("Favorite dog breed is pug");
+            break;
+        }
+    default:
+        {
+            Console.WriteLine("You don't have any favorites");
+            break;
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+Iteration statements execute a block of statements until a condition is met OR
+for each item in a collection
+
+-while statements         (loop)
+-Do while statements      (loop)
+-For statements           (loop)
+-Foreach statements       (enumeration)(transversing through a collection)
+
+
+
+
+
+
+
+
+While Statement:
+
+
+Syntax:
+    while(conditions)
+    {
+        //Sequence of statements.
+    }
+    
+    
+    
+in this example, this will print 100 through 255    
+    
+    
+Example:
+    int i = 100, MAX = 255;
+    while (i < MAX)
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+
+
+
+
+
+
+
+
+
+Do While Statements
+
+in do while statements, the sequence of statements while get executed once because it is BEFORE condition check. so even if the condition is false, at the very first time, these statements are going to geet executed because the condition check is happening only at the end.
+
+
+Syntax:
+    do
+    {
+        //Sequence of statements
+    } while (conditions);
+ 
+
+
+Example:
+    int i = 100, MAX = 255;
+    do
+    {
+        Console.WriteLine(i);
+        i++;
+    } while (i < MAX);
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+For Statements
+
+
+Syntax:
+    for (assignment; conditions; increment)
+    {
+        //sequence of statements
+    }
+
+
+Example:
+    int MAX = 255;
+    for (int i = 100, i < MAX; i++)
+    {
+        Console.WriteLine(i);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+
+Foreach Statement
+
+T stands for the type of the variable. in the example case, it is int. name is the variable name. in this example, it is 'i'
+collection is the name of the collection. in the example, it is intArray
+
+
+
+Syntax:
+    foreach (T name in collection)
+    {
+        //Sequence of statements
+    }
+    
+    
+Example:
+    int[] intArray = new int[] { 1, 2, 3, 4, 5};
+    foreach (int i in intArray)
+    {
+        Console.WriteLine(i);
+    }
+    
+    
+    
+
+
+
+
+
+
+
+
+
+//Loops
+
+int input;
+
+Console.WriteLine("Enter a number: ");
+input = int.Parse(Console.ReadLine()); //converts string to integer
+
+//While
+Console.WriteLine("While Loop");
+int i = 0;
+while (i < input && i < 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+
+
+//Do While Loop
+//remember, in do while, the set of statements gets executed at least once.
+
+i = 0;
+Console.WriteLine("Do While Loop");
+do
+{
+    Console.WriteLine(i);
+    i++;
+} while (i < input && i < 5);
+
+
+//For Loop
+Console.WriteLine("For Loop");
+for(int j = 0; j < input && j < 5; j++)
+{
+    Console.WriteLine(j);
+}
+
+
+Console.WriteLine("End of Program"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//For Each Loop
+
+
+string[] days = new string[]
+{
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+};
+
+foreach(string s in days)
+{
+    Console.WriteLine(s);
+}
+Console.WriteLine("End of program");
+
+
+
+
+
+
+
+
+
+
+Debugging
+    -process of locating bugs/issues and removing them using debugging tools
+    -Usually it takes more time to debug than coding
+    -Debugging is a part of every programmer's day-to-day life
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

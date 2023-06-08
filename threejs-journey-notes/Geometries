@@ -1,0 +1,27 @@
+Geometries are composed of vertices (point coordinates in 3D space) and faces (triangles that join those vertices to create a surface).
+
+We use geometries to create meshes, but you can also use geometries to form particles.
+
+
+You're not going to move the mesh, you're going to move the vertices of the geometry.
+
+
+
+**We already made a cube, but we didn't talk much about the parameters. Most geometeries have parameters, and you should always look at the docs before using it. 
+
+
+
+BoxGeometry has 6 parameters: 
+
+width: The size on the x axis
+height: The size on the y axis
+depth: the size on the z axis
+widthSegmets: how many subdivisions in the x axis
+heightSegments: How many subdivisions in the y axis 
+depthSegments: How many subdivisions in the z axis
+
+
+
+
+
+

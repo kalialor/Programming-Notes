@@ -1,0 +1,50 @@
+.NET framework is a platform in which you build upon
+    -you can use a lot of different languages to build on top of .NET framework
+    -C#, VB, F#
+    -it is currently still supported
+    
+CLR is in the .NET framework
+
+F# is functional 
+C# is Object-Orientied
+
+
+.NET framework & .NET core are called abstraction layers, below of the languages
+
+
+
+
+
+.NET Core
+    -the layer below all of the other languages
+    -the .NET framework got replaced by the .NET core
+    -it is faster
+    -.NET core is the new abstraction layer we are running under
+    -.NET 3.1 and below is called .NET core and .NET 3.1 and above is called .NET
+    -you can use .NET Core any Windows, Mac, & Linux
+    
+    
+    
+.NET Standard
+    -bridges the gap between the 2 abstraction layers (.NET framework & .NET core)
+    -also uses Xamerian and Unity
+    -is going to go away eventually
+    
+    
+-In the future we will have only 1 abstraction layer called .NET6
+
+
+
+
+
+
+
+
+
+In summary, the languages are on the top (C#, VB, F#)
+then it is complied down to the abraction layer you want
+    -.NET Framework or .NET core
+    -then from there it gets compiled in the just-in-time (JIT) compiler
+    
+
+

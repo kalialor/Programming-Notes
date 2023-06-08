@@ -1,0 +1,518 @@
+
+THIS IS A NAMESPACE
+ex:
+
+using System;
+
+namespace ConsoleApp1
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, world!");
+        }
+    }
+}
+
+
+
+
+System is a namespace
+ConsoleApp1 is the name of the namespace you created
+Program is the name of the class
+public means it can be accessed from other parts of the codebase
+there is a method called 'main' 
+    -the main method is the entry point of a C# console app.
+
+the main method has the following characteristics:
+    -static means it belongs to the class itself rather than an instance of the class
+    -the return type is void, meaning it does not return a value
+    -string[] args are a parameter
+        -args is the name of the parameter
+
+inside of the method body, you would write the actual code that will be executed when the program starts
+
+in this example, the main method prints the message "Hello, World!"
+Console.WriteLine is a method
+
+
+
+
+
+use CTRL . to rename all the variables at the same time. 
+
+
+
+
+
+
+
+
+if/else if/else statement:
+
+
+
+
+
+
+Console.WriteLine("Choose Your Breed:");
+Console.WriteLine("Choose Breed from these: pomsky, yorkie, pug.");
+string userValue = Console.ReadLine();
+
+if (userValue == "pomsky")
+{
+    Console.WriteLine("Your favorite breed is pomsky");
+}
+else if (userValue == "yorkie")
+{
+    Console.WriteLine("Your favorite breed is yorkie");
+}
+else if (userValue == "pug")
+{
+    Console.WriteLine("Your favorited breed is pug");
+}
+else
+{
+    Console.WriteLine("Undefined.");
+}
+
+
+
+
+
+/*string message = (userValue == "1") ? "boat" : "strand of lint"
+
+if user puts in 1 then they get a boat. if user puts in anything other then 1
+then they get a strand of lint.
+*/
+
+
+
+
+
+operands are the name of the variable
+operators are (+, -, *, /, %)
+
+
+
+
+
+
+
+
+
+
+
+//Conditional Operators && ||
+
+//Conditional AND operator (both has to be true)
+if ((x > y)) && (a > b))
+{
+    Console.WriteLine("whatever");
+}
+
+
+//Conditional OR operator (only 1 has to be true)
+if ((x y)  || (a > b))
+{
+    Console.WriteLine("Whatver");
+}
+
+
+
+
+
+
+
+
+
+//For iteration
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i);
+}
+                       
+                       
+
+
+
+
+
+
+
+
+//Arrays
+
+int[] numbers = new int[4];  //size of array
+
+numbers[0] = 1;
+numbers[1] = 2;
+numbers[2] = 3;
+numbers[3] = 4;
+
+//Console.WriteLine(numbers[1]);
+//Console.WriteLine(numbers.Length);
+
+
+//int[] numbers = new int[] { 2, 4, 6, 8 };
+
+
+
+string[] names = new string[] { "Oliver", "Mary", "Alex" };
+
+for (int i = 0; i < names.Length; i++)  //this will go up to the length of the array
+{
+    Console.WriteLine(names[i]);
+}
+Console.ReadLine();
+
+
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+Console.ReadLine();
+
+
+string reverseStr = "Kalia";
+
+char[] charArray = reverseStr.ToCharArray(); //puts the characters into an array to char
+Array.Reverse(charArray);       //reverses the array
+
+foreach (char strChar in reverseStr) //new variable, strChar
+{
+    Console.Write(strChar); //writes the new variable
+}
+Console.ReadLine();
+
+
+
+                       
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+                       
+https://www.youtube.com/watch?v=0QUgvfuKvWU                   
+
+What is (LINQ) Language Integrated Query?
+    -provides a way to filter, sort, and provide other aggrate operations on collections of our data type
+    -is the name for a set of technologies based on the integration of query capabilities directy into the C# language
+    -Once you know LINQ syntax, then you can use it for Object, XML, Enitity, & Dataset, instead of them 4 having their own language
+    -as long as you have the namespace: System.Linq in your project, then you all the capabilities of LINQ
+    -LINQ queries return results as objects
+    -You are writing less ocde as well as it makes it more readable and easy to understand and maintain
+    -LINQ provides a powerful and expressive way to query, manipulate, and transform data, making it easier for developers to work with different data sources using a consistent syntax and programming model.
+    
+    
+    
+    
+    -***LINQ queries can be written in Query Syntax or Method Syntax
+    
+    
+    ex:
+    int[] scores = new int[] {99, 91, 83, 77, 69 43};
+    
+    //Query Syntax
+    var scoreQuerySyntax = 
+        from score in scores
+        where score > 80
+        select score;
+        
+    //Method Syntax
+    var scoreMethodSyntax = scores.Where(score => score > 80); // => is a lambda expression
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+  
+    
+Deffered Execution vs Immediate Execution within LINQ
+
+-Deferred Execution means that the evaluation of a query is delayed until the value is actually required! It improves performance by not needing unnecessay executions. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is enumeration?
+
+
+-Enumeration is a data type in programming that allows you to define a set of named values, representing a discrete set of possible options or states
+
+enumerations are used when you have a fixed number of distinct values that a variable can take on. Rather than using arbitrary integers or strings to represent these values, you can define an enum with specific named constants that represent each value
+
+
+ex:
+
+enum DaysOfWeek
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+
+In this example, DaysOfWeek is an enum type that represents the days of the week. The enum defines seven named constants, each corresponding to a specific day.
+
+You can declare variables of the enum type and assign them one of the defined values. For example:
+
+DaysOfWeek today = DaysOfWeek.Wednesday;
+
+
+
+In this case, the variable today is assigned the value DaysOfWeek.Wednesday.
+
+Enumerations provide several benefits, including:
+
+Improved code readability: Enumerations make the code more readable and self-explanatory because you can use meaningful names instead of arbitrary values.
+
+Type safety: Enumerations provide type safety because variables of an enum type can only be assigned one of the predefined values. This prevents accidental assignment of incorrect values.
+
+Easy maintenance: If you need to modify or extend the set of values, you can easily update the enum definition without having to search and replace the individual occurrences throughout the code.
+
+Enums are commonly used to represent options, states, or categories in various programming scenarios, such as defining choices in menus, representing status codes, or specifying different modes of operation.
+
+
+
+
+enums are often used in place of primitive data types like int, bool, or string when you have a specific set of values that you want to represent.
+
+
+
+Enums are commonly used in scenarios where there's a limited, well-defined set of options or states. For example, you might use enums to represent different modes in a game (e.g., "Easy," "Medium," "Hard"), different categories of products (e.g., "Electronics," "Clothing," "Books"), or different states of an object (e.g., "Open," "Closed," "Pending").
+
+By using enums, you can make your code more expressive, maintainable, and less prone to errors by explicitly defining and using meaningful named constants instead of relying on arbitrary primitive values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

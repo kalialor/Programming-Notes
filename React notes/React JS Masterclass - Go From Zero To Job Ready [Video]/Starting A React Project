@@ -1,0 +1,151 @@
+docs are at: beta.reactjs.org
+
+you can change github.com to github.dev to see the project in VScode
+
+
+
+npx create react app my app 
+cd my app
+npm start
+
+
+
+
+
+
+
+
+
+npx: npx is a package runner tool that comes bundled with npm (Node Package Manager). It allows you to run packages without installing them globally. In this case, it's used to execute the create-react-app package without explicitly installing it beforehand. 
+
+create-react-app: create-react-app is a command-line tool used to bootstrap a new React application with a basic project structure and configuration. It sets up everything you need to start building a React application, including the necessary dependencies and development environment.
+
+my-app: my-app is the name you give to your React application. You can replace it with any name you prefer. When you run this command, a new directory with the specified name will be created, containing the initial React application files.
+
+
+
+
+npx is to execute something
+npm is to manage something
+
+
+
+
+delete src folder. then create src folder. create index.html 
+
+index.html:
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import { App } from "./App";
+import "./index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>    //activates additional checks & warnings
+);
+
+
+
+
+
+
+
+
+App.js: (type in rfc to bring up this code) (or rafc for arrow function)
+(you don't need to import react from react anymore version 16+)
+
+
+import './App.css';
+
+export default function App() {
+    const username = "Kalia";
+
+    return (
+        <>
+        <h1 className='active'>{username}</h1>
+        </>
+     )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USING VITE: 
+
+In terminal type in: npm create vite@latest
+    Then follow the instructions
+
+
+
+
+
+
+
+Not using VITE: 
+
+In terminal type in: npx create-react-app NAME OF PROJECT FOLDER
+cd NAME OF PROJECT FOLDER
+npm start
+
+
+
+
+
+
+Delete all the extranous files. The only files you should have in the src folder is: App.css, App.js, index.js
+
+
+In the index.html file you should see <div id="root"></div> 
+This is what renders the React
+
+
+Make sure the index.js has: 
+import ReactDOM from "react-dom"
+
+
+
+
+
+
+
+
+
+
+
