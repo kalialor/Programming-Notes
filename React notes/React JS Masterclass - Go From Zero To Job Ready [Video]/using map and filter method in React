@@ -1,0 +1,220 @@
+import React from 'react';
+
+const App = () => {
+  const data = [
+    { id: 1, name: 'John', age: 25 },
+    { id: 2, name: 'Jane', age: 30 },
+    { id: 3, name: 'Tom', age: 20 },
+    { id: 4, name: 'Alice', age: 35 },
+    { id: 5, name: 'Bob', age: 28 }
+  ];
+
+const filteredData = data.filter(item => item.age > 25);
+
+return (
+    <div>
+        <h1>Filtered List</h1>
+            <ul>
+                {filteredData.map(item => (
+                    <li key={item.id}>{item.name}</li>
+           ))}
+            <ul>
+   </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+Certainly! Here's an example of a simple React project that utilizes the map and filter methods to render a list of items based on certain conditions:
+
+jsx
+Copy code
+import React from 'react';
+
+const App = () => {
+  const data = [
+    { id: 1, name: 'John', age: 25 },
+    { id: 2, name: 'Jane', age: 30 },
+    { id: 3, name: 'Tom', age: 20 },
+    { id: 4, name: 'Alice', age: 35 },
+    { id: 5, name: 'Bob', age: 28 }
+  ];
+
+  const filteredData = data.filter(item => item.age > 25);
+
+  return (
+    <div>
+      <h1>Filtered List</h1>
+      <ul>
+        {filteredData.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+In this example, we have an array of data objects, each representing a person with their id, name, and age. We use the filter method to create a new array called filteredData that contains only the items with an age greater than 25.
+
+In the JSX code, we iterate over the filteredData array using the map method to render a list of <li> elements, displaying the names of the filtered items. The key prop is necessary for React to efficiently update the list when items are added or removed.
+
+When this component is rendered, it will display a heading "Filtered List" followed by an unordered list (<ul>) containing the names of the people whose age is greater than 25.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer"; 
+import './App.css';
+
+export const App = () => {
+
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+  return (
+    <>
+    <Header />
+      <ul>
+        {evenNumbers.map(number =>(
+          <li key={evenNumbers}>{number}</li>
+        ))}
+      </ul>
+      <Footer />
+      </>
+  )}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer"; 
+import './App.css';
+
+export const App = () => {
+
+  const names = ['Alice', 'Bob', 'Charlie', 'Amy', 'Alex'];
+
+  const filteredNames = names.filter(name => name.startsWith('A'));
+
+  return (
+    <>
+    <Header />
+      <ul>
+        {filteredNames.map(name => (
+          <li key={filteredNames}>{name}</li>
+        ))}
+      </ul>
+      <Footer />
+      </>
+  )}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

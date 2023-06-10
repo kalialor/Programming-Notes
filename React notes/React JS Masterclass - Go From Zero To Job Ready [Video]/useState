@@ -1,0 +1,237 @@
+Docs: https://react.dev/reference/react/useState
+
+
+
+
+import { useState } from 'react'
+
+export default function App() {
+    const [count, setCount] = useState(0);
+    
+    function handleAdd(){
+        setCount(count => count + 1);
+        setCount(count => count + 1);
+        setCount(count => count + 1);
+    }
+    
+    function handleSub(){
+        setCount(count - 1);
+    }
+    
+    function handleReset(){
+        setCount(0);
+    }
+    
+    
+    return (
+        <div>
+            <p>{count}</p> 
+            <button onClick={handleAdd} className='add'>ADD</button>
+             <button onClick={handleSub} className='sub'>SUBTRACT</button>
+              <button onClick={handleReset} className='reset'>RESET</button>
+        </div>
+       )};
+       
+       
+       
+       
+       
+
+
+ setCount(count => count + 1); is an updater function 
+ 
+ count is the 'pending state'
+ count + 1 is the 'next state'
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+
+
+In React, `useState` is a built-in hook that allows you to add state to your functional components. It provides a way to declare and manage state variables within a component. The `useState` hook returns an array with two elements: the current state value and a function to update that value.
+
+Here's a simple explanation of how to use `useState`:
+
+1. Import the `useState` hook from the 'react' module:
+ 
+   import React, { useState } from 'react';
+   ```
+
+2. Declare a state variable and its updater function using the `useState` hook:
+
+   const [state, setState] = useState(initialValue);
+   ```
+
+   - `state` is the current value of the state variable.
+   - `setState` is the function that you use to update the state variable.
+   - `initialValue` is the initial value you want to assign to the state variable.
+
+3. Access and update the state variable:
+
+   // Access the state variable
+   console.log(state);
+
+   // Update the state variable
+   setState(newValue);
+   ```
+
+   - To access the current value of the state variable, you use `state`.
+   - To update the value of the state variable, you call `setState` and pass the new value as an argument.
+
+4. Use the state variable in your component's rendering or logic:
+
+   function MyComponent() {
+     const [count, setCount] = useState(0);
+
+     return (
+       <div>
+         <p>Count: {count}</p>
+         <button onClick={() => setCount(count + 1)}>Increment</button>
+       </div>
+     );
+   }
+
+
+In the example above, we define a component called `MyComponent`. It uses the `useState` hook to declare a state variable called `count` and its updater function `setCount`. The initial value of `count` is set to 0. We then render the current value of `count` and a button that increments the value when clicked.
+
+That's a basic overview of how `useState` works in React. It's a powerful tool that enables you to manage and update state in functional components.
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+import { useState } from 'react';
+
+
+export default function App() {
+    const [tasks, setTasks] = useState([
+        {id: 1, name: "Record Lecture", completed: true},
+        {id: 2, name: "Do Laundry", completed: false},
+        {id: 3, name: "Vacumn", completed: false}
+      ]};
+     
+     
+     return (
+         <div className="App>
+             <h1>Task List</h1>
+             <ul>
+                {tasks.map((task) => (
+                   <li key={task.id}>
+                       <span>{task.id} - {task.name}</span>
+                       <button>Delete</button>
+                   </li>
+                ))}
+             
+                 </ul>
+         </div>
+       )};
+                 
+     
+     
+     
+
+     
+     
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+  
+  
+  
+  
+  
+  
