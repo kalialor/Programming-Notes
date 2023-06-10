@@ -1,0 +1,48 @@
+In React, props (short for properties) are a way to pass data from a parent component to a child component. They allow you to customize and configure a component by providing values or functions that the component can use.
+
+Here's a simple explanation of how props work in React:
+
+1. Parent Component: In React, you have a hierarchy of components where one component can be a parent of another component. The parent component can pass data or functionality to its child components using props.
+
+2. Prop Creation: Inside the parent component, you define the props you want to pass to the child component. Props are defined as attributes on the child component when it is rendered. For example, you might have a parent component called `Parent` and a child component called `Child`. In the parent component, you can pass a prop called `message` to the child component like this:
+
+```jsx
+<Child message="Hello, Child!" />
+```
+
+3. Prop Usage: Inside the child component, you can access the props passed from the parent component. You can use them like regular variables or access their values using `props` object. For example, in the `Child` component, you can display the `message` prop like this:
+
+```jsx
+function Child(props) {
+  return <div>{props.message}</div>;
+}
+```
+
+In this example, the child component will render a `<div>` element with the text "Hello, Child!" because it is accessing the `message` prop passed from the parent component.
+
+4. Dynamic Props: Props can be dynamic and change over time. You can pass different values or update them based on the component's state or other factors. Whenever the parent component updates the prop value, the child component will receive the updated value and re-render if necessary.
+
+Props provide a way to make components reusable and flexible, allowing you to configure their behavior based on different data or requirements. They enable communication between components in a React application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

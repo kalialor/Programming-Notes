@@ -1,0 +1,289 @@
+import { useState } from "react";
+import "./AddTask.css";
+
+export const AddTask = () => {
+    const [taskValue, setTaskValue] = useState("");
+
+    return (
+        <section className="addtask">
+            <form>
+                <input onChange={(e)} => setTaskValue(e.target.value)} type="text" name="task" id="task" placeholder="Task Name" autoComplete="off" />
+                <button type="submit">Add Task</button>
+            </form>
+            <p>{taskValue}</p>
+        </section>
+   )};
+   
+   
+   
+
+
+
+In the provided code, the `onChange` event is used on the `<input>` element to handle changes in its value. 
+
+Here's a breakdown of how the `onChange` event works in this code:
+
+1. Initial State: The component uses the `useState` hook to initialize the `taskValue` state variable with an initial value of an empty string.
+
+2. Input Element: The `<input>` element represents a text input field where users can type in a task name.
+
+3. onChange Event: The `onChange` event is attached to the `<input>` element. It triggers a callback function whenever the value of the input field changes.
+
+4. Callback Function: The callback function `(e) => setTaskValue(e.target.value)` is executed whenever a change occurs in the `<input>` field. It receives an event object `e` as an argument.
+
+5. Event Object: The event object `e` contains information about the event that occurred. In this case, `e.target.value` represents the current value of the `<input>` field.
+
+6. Updating State: Inside the callback function, `setTaskValue(e.target.value)` is called. It updates the value of the `taskValue` state variable with the current value of the `<input>` field.
+
+7. Rendering: As the `taskValue` state variable changes, the component re-renders, and the updated value is displayed in the `<p>` element below the form.
+
+By using the `onChange` event and the `setTaskValue` function from the `useState` hook, the code captures the user's input in the text field and updates the `taskValue` state variable accordingly. This allows the component to reflect the user's input in real-time and display it in the `<p>` element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yes, that's correct! The `onChange` event in React is used to handle changes in form elements or input fields. It is triggered whenever the value of an element, such as an `<input>` field or a `<select>` dropdown, changes.
+
+By using the `onChange` event, you can capture user input, track changes, and update the state or perform other actions based on those changes. It allows you to respond dynamically to user interactions and keep the component's state and UI in sync with the user's input.
+
+In the provided code example, the `onChange` event is used on the `<input>` element to capture the changes in the input field's value. Whenever the user types or modifies the text in the input field, the `onChange` event is triggered, and the provided callback function is executed to update the `taskValue` state variable with the current value of the input field. This ensures that the component is aware of the changes in the input field and can reflect them in the UI.
+
+So, in summary, the `onChange` event is an essential part of handling user input and implementing dynamic behavior in React components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No, the `onChange` event is not limited to just forms and input fields. While it is commonly used with form elements, such as `<input>`, `<select>`, and `<textarea>`, it can also be used with other types of interactive elements in React.
+
+Here are some examples of where you can use the `onChange` event in addition to forms and input fields:
+
+1. Checkbox and Radio Inputs: You can use the `onChange` event with checkboxes and radio buttons to track and handle changes in their selected state.
+
+2. Dropdowns and Select Inputs: The `onChange` event can be used with `<select>` elements to handle changes in the selected option.
+
+3. Sliders and Range Inputs: If you have sliders or range inputs in your component, you can use the `onChange` event to capture and handle changes in the selected value.
+
+4. Custom Components: You can also create your own custom components that utilize the `onChange` event. For example, if you create a custom toggle switch component, you can use `onChange` to handle changes in its state.
+
+The `onChange` event is a generic event in React that can be used with any interactive component or element where tracking and handling changes are required. It provides a way to respond to user interactions and update the state or perform other actions accordingly. While it is commonly associated with forms and input fields, it is not limited to them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { useState } from 'react';
+import "./App.css";
+
+const App = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);  //so starting from light
+    
+    const handleSliderChange = () => {
+        setIsDarkMode(!isDarkMode);
+        };
+        
+        
+        return (
+        <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+        <h1>Toggle Light/Dark Mode</h1>
+        <label htmlFor="slider">Dark Mode:</label>
+        <input 
+            type="checkbox"
+            id="slider"
+            checked={isDarkMode}
+            onChange={handleSliderChange}
+            />
+        </div>
+  )};
+  
+  
+  
+  
+In this example:
+
+The component App maintains a state variable isDarkMode that determines whether the dark mode is active or not. It is initially set to false (light mode).
+
+The handleSliderChange function is called whenever the slider input's value changes. It simply toggles the value of isDarkMode by using the setIsDarkMode function from the useState hook.
+
+The input element has type="checkbox" and is connected to the isDarkMode state variable. It reflects the current value of isDarkMode and updates it when the user interacts with the slider.
+
+The className of the div element is conditionally set based on the isDarkMode state. This way, when isDarkMode is true, the dark-mode class is applied, and when it's false, the light-mode class is applied. You can define different CSS styles for each mode in the associated CSS file.
+
+By using the onChange event with a slider input and updating the state variable accordingly, you can toggle between light and dark modes in the UI. When the slider is toggled, the handleSliderChange function is called, and the isDarkMode state is updated, triggering a re-render and applying the corresponding CSS styles.
+
+Note: The CSS classes dark-mode and light-mode are not defined in the provided code. You would need to define those classes and their associated styles in your CSS file for the desired visual effect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To define the styles for the light and dark modes in your CSS, you can create separate classes for each mode and define the desired styles within those classes. Here's an example of how you can define the CSS classes for the light and dark modes:
+
+```css
+.light-mode {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #f5f5f5;
+}
+```
+
+In this example, the `light-mode` class defines a light background color and dark text color. The `dark-mode` class, on the other hand, defines a dark background color and light text color.
+
+You can modify these styles according to your preference and the specific requirements of your light and dark modes. Feel free to adjust the colors, font sizes, spacing, or any other styles that you need for your application.
+
+Once you have defined these classes in your CSS file, the `className` property on the `div` element in your React component will apply the appropriate class based on the value of the `isDarkMode` state. When `isDarkMode` is `true`, the `dark-mode` class will be applied, and when it's `false`, the `light-mode` class will be applied. This will result in the corresponding styles being applied to the component, giving the desired light or dark mode appearance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

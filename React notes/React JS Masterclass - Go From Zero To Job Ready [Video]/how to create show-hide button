@@ -1,0 +1,54 @@
+BoxCard.js
+
+
+import { useState } from 'react'
+
+export const BoxCard = ({result, children}) => {
+    const [show, setShow] = useState(true);
+    
+    return (
+        <div className={show ? "" : "hidden"}>
+            <div className={`box ${result}`}>
+                {children}
+            </div>
+            <button onClick={() => setShow(!show)} className="trigger">Hide</button>
+       </div>
+   )};
+        
+        
+        
+        
+      
+   
+        
+-if show is true, then I am going to show nothing, if show is false, I am going to show hidden
+
+
+
+Certainly! Let's break down the code step by step:
+
+1. The line `import { useState } from 'react'` imports the `useState` function from the React library. This function allows us to create state variables in functional components.
+
+2. The code defines a functional component called `BoxCard` which takes two props: `result` and `children`. Props are data passed to a component from its parent.
+
+3. Inside the `BoxCard` component, we declare a state variable called `show` using the `useState` function. The `show` variable is initially set to `true`. The `useState` function returns an array with two elements: the current value of the state variable (`show` in this case) and a function to update the state variable (`setShow` in this case).
+
+4. The component returns JSX, which represents the structure and content of the component's output.
+
+5. The outermost `div` element has a `className` attribute that conditionally sets the CSS class of the element based on the value of the `show` variable. If `show` is `true`, the element has no class; otherwise, it has the class "hidden". This class can be used to hide or show the element with CSS styles.
+
+6. Inside the outer `div`, there is another `div` element with a `className` attribute. The `className` attribute combines the string "box" with the value of the `result` prop, which is used as a CSS class for styling purposes.
+
+7. Inside the inner `div`, we render the `children` prop. The `children` prop represents the content passed to the `BoxCard` component when it is used.
+
+8. Finally, there is a `button` element with an `onClick` attribute. When this button is clicked, it calls an inline arrow function that toggles the value of the `show` variable by calling the `setShow` function. The button also has a class "trigger" for styling purposes.
+
+In summary, this code defines a `BoxCard` component that displays a box with content and a button. Clicking the button toggles the visibility of the box based on the `show` state variable.
+
+
+
+
+
+
+
+

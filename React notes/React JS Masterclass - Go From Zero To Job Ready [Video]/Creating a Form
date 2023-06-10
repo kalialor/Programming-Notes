@@ -1,0 +1,27 @@
+import "./AddTask.css";
+
+export const AddTask = () => {
+    return (
+        <section className="addtask">
+            <form>
+                <label htmlFor = "task">Task Name:</label>
+                <input type="text" name="task" id="task" placeholder="Task Name" autoComplete="off" />
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+   )};
+   
+   
+   
+   
+   
+   
+-the task value connects the label to the input. so when you click on the label, the blinking line comes up for typing
+
+
+
+
+
+
+
+
