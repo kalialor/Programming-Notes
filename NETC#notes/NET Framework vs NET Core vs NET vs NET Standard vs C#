@@ -1,0 +1,56 @@
+https://www.youtube.com/watch?v=4olO9UjRiww
+
+
+.NET Framework  .NET Core is the abstraction layer beneath all of the languages (C#, VB, F#). It is still being supported, but it is not getting new features.
+
+
+
+
+.NET Framework-is a platform in which you build upon. it is a language agnostic tier. meaning you can you whatever language you want in it's programming. 
+       -C#, VB, F#
+       -.NET Framework is over 20 years old   
+       
+       
+
+
+
+
+.NET Core-Microsoft remade .NET Framework into this. There is a massive speed increase. The new abstraction layer. So C#10 is only going to be for .NET Core. This is getting supported and getting new features.
+
+
+
+C# is the language you write in. which is then translated to the intermediate language which is apart of the framework.
+
+
+
+
+***.NET Core 3.1 and down is called .NET Core & .NET Core 5+ is called .NET
+
+
+
+
+.NET Standard-meant to be a bridge between .NET Framework to .NET Core. Also bridges Unity, Mono & Xamerian. Will go away eventually. Will be called .NET 6.
+
+
+
+
+
+
+
+
+So the languages are on top. Each are complied down to the abrstraction layer you want: .NET Framework, .NET Core, .NET. They are all using the same intermediate language to complie it down, using the just in time complier (JIT).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
