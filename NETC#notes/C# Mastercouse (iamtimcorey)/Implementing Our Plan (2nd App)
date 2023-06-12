@@ -1,0 +1,35 @@
+//Welcome User to App
+Console.WriteLine("Welcome to my App");
+Console.WriteLine("This app was built by Kalia");
+Console.WriteLine("-------------------------------");
+Console.WriteLine();
+
+
+//Ask for First Name
+
+Console.Write("What is your first name: ");
+string firstName;
+firstName = Console.ReadLine();
+
+
+
+
+
+
+//Greet user by name
+Console.WriteLine("Hello " + firstName);
+Console.WriteLine("Thank you for using my application.");
+Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+Console.ReadLine();    this asks the user to type out information, then waits for them to hit the ENTER key

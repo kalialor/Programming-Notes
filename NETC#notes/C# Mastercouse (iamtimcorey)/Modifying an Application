@@ -1,0 +1,13 @@
+WriteLine is a method
+
+
+Intellicode is autofill
+Intellisense is the drop-down menu
+
+
+Console.ReadLine();  //waits for the user to enter text. This will pause the console.
+
+
+typing in 'cw' will type in Console.WriteLine()
+
+

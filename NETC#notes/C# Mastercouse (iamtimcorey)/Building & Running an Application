@@ -1,0 +1,35 @@
+C# code is not what the computer runs
+
+
+When it is compiled, it is no longer C# code. It is compiled into what's called intermediate language. From there, it is executed using .NET Framework, Core, .NET or whatever you are using. So you will be left with an executable file.
+
+
+***The solution is NOT the final project.
+
+
+
+bin & obj folders are folders that gets created when you run a build
+
+you can delete those folders.
+
+
+obj is for resources
+bin is for debug
+
+
+
+
+Debug vs. Release
+
+
+Leave it in Debug mode
+
+Release is for production
+
+
+Release is the most efficent possible, debug is for debugging
+
+
+In general, start with debugging.  rather than start without debugging.
+
+

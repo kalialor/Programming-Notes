@@ -1,0 +1,116 @@
+Here's a super simple example that demonstrates the usage of useState, useRef, useEffect, onChange, and props in React:
+
+
+import { useState, useRef, useEffect } from 'react';
+
+
+export default function Card({initialValue}) {
+    const [count, setCount] useState(initialValue);
+    const countRef = useRef(null);
+    
+    useEffect(() => {
+        countRef.current = count;
+        });
+        
+    count increment = () => {
+        setCount(count + 1);
+     };
+     
+     count decrement = () => {
+         setCount(count - 1);
+     };
+     
+     return (
+         <div>
+         <h1>Counter Example</h1>
+             <button onClick={increment}>+</button>
+             <span>{initialValue}</span>
+             <button onClick={decrement}>-</button>
+        </div>
+   )};
+        
+        
+ 
+ 
+ App.js
+ 
+ 
+ import Card from "./components/Card"
+ 
+ export default function App() {
+     return (
+         <div>
+             <Card initialValue={0} />          //use of props
+         </div>
+    )};
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ In this simple example, we have a component called Counter that renders a counter with two buttons to increment and decrement the count. The initial count value is passed as a prop.
+
+Here's a breakdown of the code:
+
+useState: We use useState to create a state variable called count and a function setCount to update its value. The initial value is provided through the initialValue prop.
+
+useRef: We use useRef to create a reference called countRef. This reference will be used to store and access the current value of count.
+
+useEffect: We use useEffect to run an effect after every render. In this example, we store the current value of count in the countRef by assigning count to countRef.current.
+
+onChange: In this example, we don't have an input field, so onChange is not used.
+
+Buttons: We have two buttons, one to increment the count and one to decrement it. When clicked, the corresponding increment or decrement function is called, which updates the count state accordingly using setCount.
+
+Props: In the Counter component, we expect a single prop called initialValue, which is the initial count value. In the App component, we render the Counter component and provide an initial value of 0 through the initialValue prop.
+
+This example provides a straightforward implementation of a counter component using React hooks and props. It demonstrates how to manage state, update it with event handlers, and pass data between components using props.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Certainly! Let's explain those lines:
+
+
+const countRef = useRef(null);
+
+
+In this line, we use the `useRef` hook to create a mutable reference called `countRef`. The initial value of the reference is set to `null`. 
+
+The `useRef` hook returns a mutable object that persists across renders. It can be used to store mutable values that persist without triggering a re-render. In this case, we use it to create a reference to hold the current value of `count`.
+
+
+useEffect(() => {
+  countRef.current = count;
+});
+
+
+In this line, we use the `useEffect` hook to create an effect that runs after every render. The effect's callback function is provided as the first argument to `useEffect`.
+
+Inside the effect, we assign the current value of `count` to the `current` property of `countRef`. This is done by accessing `countRef.current` and assigning it the value of `count`. 
+
+The effect will run after each render and update the value of `countRef.current` to match the current value of `count`. By storing the current value in `countRef`, we can access it later even if the component re-renders.
+
+The reason for using `useEffect` without any dependencies (an empty dependency array) is to run this effect after every render, regardless of any specific dependency changes.
+
+
+
+
+

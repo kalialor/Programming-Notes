@@ -1,0 +1,72 @@
+The namespace is no longer shown in .NET Core. It is implied and already being used.
+
+
+
+
+using System;
+
+namespace Practice
+{
+    internal class Program
+    {
+    
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");            //method call
+        }
+    }
+}
+
+
+
+
+
+
+
+
+System is a library. It has: System.Console.WriteLine()
+so instead of writing: System.Console.WriteLine() you can just write: Console.WriteLine()
+    -The System libray is already apart of .NET Core. It is not bringing in anything. It is using what already exists. So it is different from an import statement in React.
+It is just shortcutting the typing you need to do.
+
+
+
+
+1 class per file
+
+
+
+
+
+
+
+internal class Program-the place where we are going to look for our entry point of our application
+
+
+
+
+
+
+static void Main(string[] args)-the entry point method of our application. This is the place where our application comes and says start.
+
+
+
+We have to have classes inside of our methods. They cannot live outside of classes.
+
+
+void means it returns no data back.
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
