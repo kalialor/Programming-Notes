@@ -1,0 +1,19 @@
+decimal is a much larger amount of storage than a double is
+for most operations we use double
+
+you double for math, use decimal for money
+
+we use decimal for money, and for large decimal units
+
+
+
+*you have to put 'M' for decimal
+
+
+ex: 
+
+decimal bankAccountBalance;
+
+bankAccountBalance = 2.34M;
+
+Console.WriteLine(bankAccountBalance);

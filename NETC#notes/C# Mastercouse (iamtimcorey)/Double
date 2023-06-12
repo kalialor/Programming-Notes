@@ -1,0 +1,24 @@
+//doubles can have a decimal point  - 1.23. 43
+
+if you want double:
+
+
+double averageAge;
+
+averageAge = (43.0 + 22 + 62) /3;
+
+Console.WriteLine(averageAge);     //42.33333
+
+
+
+
+
+
+you don't want to divide int because it truncates the decimal point. use double instead.
+
+this is the most common used thing for decimal
+
+
+
+
+we do not use doubles to store money.

@@ -1,0 +1,17 @@
+Converting one variable to another
+
+
+most common conversion: string => something else
+
+Parse for type conversions
+
+
+
+ex:
+
+Console.Write("What is your age: ");
+string? ageText = Console.ReadLine();
+
+int age = int.Parse(ageText);
+
+Console.WriteLine(age + 15);    //  age + 15

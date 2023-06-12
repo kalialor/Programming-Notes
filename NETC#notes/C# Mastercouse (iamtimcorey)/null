@@ -1,0 +1,24 @@
+null is a lack of value
+
+
+//Haven't asked for value yet
+int? age = null;
+bool? birthday = null;
+double? battingAverage = null;
+
+
+
+//We have asked for age now
+age = 0;
+
+
+
+
+use the '?' to make the variable a nullable variable. This is really useful for data. If you don't have yet have value for a column, you don't put a value there. You say null. 
+We don't know the value yet. We are not going to put zero. Put null instead.
+
+
+
+
+
+

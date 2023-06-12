@@ -1,0 +1,14 @@
+Boolean is either true or false
+
+
+
+
+
+ex:
+
+bool isComplete = true;
+
+//isComplete = !isComplete;
+
+Console.WriteLine(!isComplete);    //false
+Console.WriteLine(isComplete);     //true

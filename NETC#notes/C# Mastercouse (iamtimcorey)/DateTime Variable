@@ -1,0 +1,18 @@
+DateTime is the most common way to store date & time
+
+
+
+ex: 
+
+using System.Globalization;
+
+DateTime today = DateTime.Now;
+Console.WriteLine(today)                     // 11/3/2021  11:01 AM
+
+//DateTime birthday = DateTime.Parse(s:"6/15/1998");
+DateTime birthday = DateTime.ParseExact("6/11/1998," "d/M/yyyy", CultureInfo.InvariantCulture);
+
+Console.WriteLine(today.ToString(format: "d"));
+Console.WriteLine(today.ToString(format: "MMMM dd, yyyy hh:mm tt zzz"));
+
+Console.WriteLine(birthday.ToString());

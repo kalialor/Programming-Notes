@@ -1,0 +1,26 @@
+Console.WriteLine("Hello. Welcome to my App.");
+
+Console.Write("What is your name: ");
+Console.ReadLine();
+
+Console.Write("What is your age: ");
+Console.ReadLine();
+
+bool isAlive = true;
+
+Console.WriteLine("Sam is alive. " + isAlive);
+
+string phoneNumber = "960-424-4442";
+
+Console.Write("Sam's phone number is: " + phoneNumber);
+Console.ReadLine();
+
+
+decimal bankAccountAmount = 300.99M;
+
+Console.WriteLine("Sam has " + bankAccountAmount + "in the bank.");
+
+
+double height = 5.6;
+
+Console.WriteLine("Sam is " + height + "inches tall.");
