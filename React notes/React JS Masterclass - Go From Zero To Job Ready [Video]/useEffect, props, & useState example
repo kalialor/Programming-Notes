@@ -1,0 +1,385 @@
+In this example, we will create a basic "Hello [name]!" component that updates the greeting when the name prop changes.
+
+
+import {useState, useEffect } from 'react';
+
+export default function Card({name}) {
+    const [greeting, setGreeting] = useState('');
+    
+    useEffect(() => {
+    setGreeting(`Hello, {name}`);
+    }, [name];
+    
+    return (
+        <h1>{greeting}</h1>
+       )};
+    
+    
+    
+    
+    
+    
+    
+import Card from './components/Card';
+
+export default function App() {
+
+return (
+    <>
+    <Card name="John" />
+    </>
+ )};
+ 
+    
+    
+    
+    
+    
+    
+   
+    
+    useState is for holding and updating the data. 
+    useEffect is for manipulating the DOM.
+    
+    
+    
+    
+
+In this example, we define the Greeting component that receives a name prop. We use destructuring to extract the prop in the function parameters.
+
+Inside the Greeting component, we define a state variable called greeting using the useState hook. The greeting variable holds the current greeting message, and setGreeting is a function that allows us to update that value.
+
+We use the useEffect hook to set the greeting message when the name prop changes. The callback function passed to useEffect runs whenever the name prop value changes. Inside the callback, we update the greeting state variable by interpolating the name prop value into the message.
+
+Finally, we render the greeting message inside an <h1> element.
+
+To use the Greeting component, simply import it into your main app component or any other component and pass the name prop with the desired value:
+    
+    
+    
+In this example, the Greeting component is rendered with the name prop set to "John". You can modify the name value to display a different greeting message. Whenever the name prop changes, the Greeting component will update the displayed message accordingly.
+
+
+
+
+
+
+
+
+
+
+
+That's a good way to summarize it! Let's break it down:
+
+`useState` is a React hook used for managing state within a component. It allows you to declare a state variable and provides a function to update that variable. The state variable holds a value that can be changed over time. When you call the update function returned by `useState`, React will automatically re-render the component to reflect the new value.
+
+Typically, `useState` is used for holding and updating values that are specific to a component, such as user input, toggles, or any other stateful data.
+
+`useEffect` is another React hook that allows you to perform side effects in your components. Side effects can include things like fetching data, subscribing to events, or modifying the DOM. 
+
+The `useEffect` hook takes two arguments: a callback function and an optional dependency array. The callback function is executed after the component has rendered, and it can be used to perform side effects. The dependency array is used to specify which values the effect depends on. If any of the values in the dependency array change, the effect will be re-run.
+
+In the example we discussed earlier, we used `useEffect` to update the `greeting` state variable whenever the `name` prop changed. This allowed us to dynamically update the displayed greeting message based on the prop value.
+
+To summarize, `useState` is used for managing state within a component, allowing you to hold and update values, while `useEffect` is used for performing side effects and reacting to changes in specific values.
+
+
+
+
+
+
+
+
+
+
+
+Of course! Let me explain it to you in simpler terms:
+
+Think of a component like a box. This box can hold different things inside, like toys or clothes. In React, we use the `useState` hook to create a special space inside the box called "state" to hold a specific value.
+
+For example, let's say we have a box called `Greeting`. Inside the `Greeting` box, we create a special space called `greeting` using `useState`. This space initially doesn't have anything inside it.
+
+Now, we want the `greeting` space to hold a message, like "Hello, [name]!" where `[name]` is the name of a person. To do that, we use the `useEffect` hook.
+
+The `useEffect` hook is like a special helper that watches for changes in something. In our case, it watches for changes in the `name` of the person. Whenever the `name` changes, the `useEffect` hook will automatically update the message in the `greeting` space.
+
+So, whenever someone changes the `name` of the person, the `useEffect` hook will see that change and update the message in the `greeting` space. For example, if the name becomes "John", the message in the `greeting` space will automatically become "Hello, John!".
+
+That's it! We use `useState` to create a space to hold a value, like a box inside a component. And we use `useEffect` to watch for changes in something, like the `name`, and automatically update the value inside the space.
+
+I hope this explanation helps you understand `useState` and `useEffect` better. Let me know if you have any more questions!
+
+
+
+
+
+
+
+
+
+
+
+
+useState keeps track of something. useEffect do something whenever that something changes.
+
+In this example, imagine you have a toy car. The car has a button that turns on and off its lights. we will use useState to keep track of whether the lights are currently on or off. And we will use useEffect to do something whenever the lights change.
+
+Ask yourself. What is the state of the lights? 
+What do you want the lights to do when the lights are on?
+
+
+
+
+
+import { useState, useEffect } from 'react';
+
+
+export default function Card() {
+    const [lightsOn, setLightsOn] = useState(false);      //keeps track. lights off 
+    
+    useEffect(() => {
+        if (lightsOn) {
+         playSoundEffect();
+       }
+     }, [lightsOn];
+     
+     const playSoundEffect = () => {
+         console.log('Beep beep!);
+       };
+       
+       return (
+        
+        <>
+          <button onClick={handleLightsToggle}>
+              {lightsOn ? 'Lights Off' : 'Lights On'}
+          </button>
+       </>
+       )};
+        
+        
+        
+        
+        
+        
+
+
+In this example, the Car component represents our toy car. The lightsOn variable, created using useState, keeps track of whether the lights are on or off. When the component first renders, the lights start in the "off" position (false).
+
+Whenever the button is clicked (handleLightsToggle function), the lightsOn value is toggled (setLightsOn) between true and false.
+
+The useEffect hook is used to listen for changes in the lightsOn value. When the lightsOn value changes, the callback function inside useEffect is executed. In our example, if the lights turn on (lightsOn is true), the playSoundEffect function is called, making a sound effect (printing 'Beep beep!' to the console).
+
+Finally, the button in the UI reflects the current state of the lights (lightsOn). If the lights are on, the button text shows "Lights Off" and vice versa.
+
+This way, every time you click the button, the lights toggle on and off, and a sound effect is made when the lights turn on.
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+import { useState, useEffect } from 'react';
+
+
+
+export default function Card() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (count === 10) {
+      alert('Count reached 10.');
+    }
+  }, [count]);
+ 
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  }
+
+
+
+  return (
+    <>
+     <h1>Count: {count}</h1>
+     <button onClick={incrementCount}>Increment</button>
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Certainly! Let's use a simple example of a "Like" button. We'll use `useState` to keep track of the number of likes, and `useEffect` to show a message whenever the number of likes changes.
+
+Here's the code:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const LikeButton = () => {
+  const [likes, setLikes] = useState(0);
+
+  useEffect(() => {
+    if (likes === 0) {
+      console.log("Be the first to like this!");
+    } else {
+      console.log(`You have ${likes} likes.`);
+    }
+  }, [likes]);
+
+  const handleLikeClick = () => {
+    setLikes(prevLikes => prevLikes + 1);
+  };
+
+  return (
+    <div>
+      <button onClick={handleLikeClick}>Like</button>
+    </div>
+  );
+};
+
+export default LikeButton;
+```
+
+In this example, we have a component called `LikeButton`. It has a `likes` variable, created using `useState`, to keep track of the number of likes. The initial value is set to `0`.
+
+We use `useEffect` to listen for changes in the `likes` value. Whenever the `likes` value changes, the callback function inside `useEffect` is triggered. In our example, if there are no likes (`likes` is `0`), it logs "Be the first to like this!" to the console. Otherwise, it logs "You have [likes] likes." with the actual number of likes.
+
+When the "Like" button is clicked (`handleLikeClick` function), the `likes` value is incremented by 1 using `setLikes`. This triggers the `useEffect` hook, which logs the appropriate message based on the updated `likes` value.
+
+You can see the number of likes and the corresponding messages in the console as you click the "Like" button.
+
+This example demonstrates the use of `useState` to hold a value (the number of likes) and `useEffect` to react to changes in that value and perform some action (logging a message).
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+ 

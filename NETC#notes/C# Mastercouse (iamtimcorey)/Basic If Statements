@@ -1,0 +1,47 @@
+bool isComplete = false;
+
+if (isComplete)
+{
+    Console.WriteLine("This statement is true.");
+}
+else
+{
+    Console.WriteLine("This statement is false.");
+}
+
+
+Console.WriteLine("End of Program.");
+
+
+
+
+
+
+
+
+
+
+
+
+
+Console.Write("What's your first name: ");
+string? firstName = Console.ReadLine();
+
+string lastName;
+
+if(firstName.toLower() == "tim")
+{
+    Console.WriteLine("Hello Mr. Emerson);
+}
+else
+{
+    Console.WriteLine($"Hello {firstName}");
+    lastName = "Smith";
+}
+
+Console.WriteLine(lastName);
+Console.WriteLine("End of Program.");
+
+
+
+
