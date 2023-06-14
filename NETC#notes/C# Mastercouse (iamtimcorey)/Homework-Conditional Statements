@@ -1,0 +1,16 @@
+//Ask user for name. Welcome Tim as professor and anyone else as student.
+
+
+Console.Write("What is your name: ");
+string firstName = Console.ReadLine();
+
+if(firstName.ToLower() == "tim")
+{
+    Console.WriteLine("Welcome Professor ");
+}
+else
+{
+    Console.WriteLine("Welcome {firstName} ");
+}
+
+Console.Write("End of Program.");
