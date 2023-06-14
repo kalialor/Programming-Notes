@@ -1,0 +1,50 @@
+Certainly! Let's consider another example scenario with two tables: "Products" and "Sales."
+
+Products Table:
+| ProductID | ProductName  |
+|-----------|--------------|
+| 1         | Laptop       |
+| 2         | Smartphone   |
+| 3         | Headphones   |
+
+Sales Table:
+| SaleID | ProductID | Quantity | SaleDate   |
+|--------|-----------|----------|------------|
+| 1      | 1         | 5        | 2023-05-01 |
+| 2      | 2         | 3        | 2023-05-03 |
+| 3      | 1         | 2        | 2023-05-05 |
+| 4      | 3         | 4        | 2023-05-07 |
+| 5      | 2         | 1        | 2023-05-10 |
+| 6      | 3         | 2        | 2023-05-15 |
+
+In this example, let's say we want to find the total quantity sold for each product, as well as the earliest and latest sale date for each product.
+
+The SQL query with a complex join and multiple aggregate functions could be:
+
+
+
+
+SELECT 
+    Products.ProductID, 
+    Products.ProductName,
+    SUM(Sales.Quantity) AS TotalQuantity,
+    MIN(Sales.SaleDate) AS EarliestSaleDate,
+    MAX(Sales.SaleDate) AS LatestSaleDate
+FROM Products
+JOIN Sales ON Products.ProductID = Sales.ProductID
+GROUP BY Products.ProductID, Products.ProductName;
+
+
+
+
+This query combines the "Products" and "Sales" tables using the join condition `Products.ProductID = Sales.ProductID`. It then calculates the total quantity sold for each product using the aggregate function `SUM(Sales.Quantity)`. Additionally, it uses the aggregate functions `MIN(Sales.SaleDate)` and `MAX(Sales.SaleDate)` to determine the earliest and latest sale dates for each product, respectively. The `GROUP BY` clause groups the results by the product ID and product name.
+
+The expected result would be:
+
+| ProductID | ProductName | TotalQuantity | EarliestSaleDate | LatestSaleDate |
+|-----------|-------------|---------------|------------------|----------------|
+| 1         | Laptop      | 7             | 2023-05-01       | 2023-05-05     |
+| 2         | Smartphone  | 4             | 2023-05-03       | 2023-05-10     |
+| 3         | Headphones  | 6             | 2023-05-07       | 2023-05-15     |
+
+This example demonstrates how complex joins and multiple aggregate functions can be used together to retrieve information that involves combining data from multiple tables and performing various calculations on the result set.
