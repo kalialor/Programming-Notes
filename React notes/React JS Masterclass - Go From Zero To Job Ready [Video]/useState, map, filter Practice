@@ -1,0 +1,123 @@
+Certainly! Here's another example that demonstrates the usage of `useState`, `map`, and `filter` with an array of objects representing books:
+
+```jsx
+import React, { useState } from 'react';
+
+function BookList() {
+  const [books, setBooks] = useState([
+    { id: 1, title: 'Harry Potter', author: 'J.K. Rowling' },
+    { id: 2, title: 'The Lord of the Rings', author: 'J.R.R. Tolkien' },
+    { id: 3, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+    { id: 4, title: 'Pride and Prejudice', author: 'Jane Austen' },
+  ]);
+
+  const filteredBooks = books.filter(book => book.author === 'J.K. Rowling');
+  const bookTitles = books.map(book => book.title);
+
+  return (
+    <div>
+      <h3>All Books</h3>
+      <ul>
+        {books.map(book => (
+          <li key={book.id}>
+            {book.title} by {book.author}
+          </li>
+        ))}
+      </ul>
+
+      <h3>Books by J.K. Rowling</h3>
+      <ul>
+        {filteredBooks.map(book => (
+          <li key={book.id}>
+            {book.title} by {book.author}
+          </li>
+        ))}
+      </ul>
+
+      <h3>Book Titles</h3>
+      <ul>
+        {bookTitles.map((title, index) => (
+          <li key={index}>{title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default BookList;
+```
+
+In this example, we have an array of book objects stored in the `books` state variable using `useState`. Each book object has properties such as `id`, `title`, and `author`.
+
+We then use `filter` to create a new array called `filteredBooks`, which contains only the books written by J.K. Rowling. The `filter` function checks if the `author` property of each book object matches `'J.K. Rowling'`. If it does, that book is included in the `filteredBooks` array.
+
+Next, we use `map` to create a new array called `bookTitles`, which contains only the titles of the books from the `books` array. The `map` function transforms each book object into its `title` property, creating an array of book titles.
+
+In the component's return statement, we render three lists:
+- The original book list, which displays each book's title and author from the `books` array.
+- The books by J.K. Rowling list, which displays the titles and authors of the books from the `filteredBooks` array.
+- The book titles list, which displays each book title from the `bookTitles` array.
+
+By using `map` and `filter` in combination with the `useState` hook, we can manipulate and display data dynamically in React components based on certain conditions or requirements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
