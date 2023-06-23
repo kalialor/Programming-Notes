@@ -1,0 +1,28 @@
+useNavigate hook
+
+
+lets you move from page to page.
+
+
+ex: 
+
+
+import { useNavigate } from "react-router-dom";
+
+
+expport const Contact = () => {
+	const navigate = useNavigate();
+	
+	const handleSubmit = () => {
+		navigate("/");                   //you can navigate anywhere. we chose home. can be ("/contact");
+}
+
+
+return (
+	<>
+		<h1>Contact</h1>
+		<button onClick={handleSubmit}>Back to Home</button>
+	</>
+)}; 
+
+

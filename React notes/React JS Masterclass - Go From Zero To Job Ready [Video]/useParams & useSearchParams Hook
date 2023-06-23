@@ -1,0 +1,170 @@
+useParams hook:
+
+
+In React, the `useParams` hook is a feature provided by the React Router library. It allows you to access and retrieve the parameters defined in the URL of your application.
+
+When you define a route with parameters in React Router, such as `/users/:id`, the `useParams` hook allows you to retrieve the value of the `id` parameter from the URL. It returns an object containing key-value pairs, where the key is the parameter name and the value is the actual value from the URL.
+
+Here's a basic example:
+
+
+import { useParams } from 'react-router-dom';
+
+function UserDetail() {
+  const { id } = useParams();
+
+  return <div>User ID: {id}</div>;
+}
+
+In the above code, `useParams` is called to get the `id` parameter from the URL. It is then used within the component to display the value of the `id` parameter.
+
+So, if the URL is `/users/123`, the component will render "User ID: 123" on the page.
+
+I hope this explanation helps! Let me know if you have any further questions.
+
+
+
+
+
+
+
+
+
+Certainly! Here's an example of how you can use the `{ id }` value obtained from `useParams()` to display information in a React component:
+
+
+import { useParams } from 'react-router-dom';
+
+function UserDetail() {
+  const { id } = useParams();
+
+  // Assume you have an array of user data
+  const users = [
+    { id: '1', name: 'John Doe', age: 25 },
+    { id: '2', name: 'Jane Smith', age: 30 },
+    { id: '3', name: 'Bob Johnson', age: 40 }
+  ];
+
+  // Find the user with the matching id
+  const user = users.find(user => user.id === id);
+
+  // Render the user information
+  return (
+    <div>
+      <h2>User Details</h2>
+      {user ? (
+        <div>
+          <p>ID: {user.id}</p>
+          <p>Name: {user.name}</p>
+          <p>Age: {user.age}</p>
+        </div>
+      ) : (
+        <p>User not found.</p>
+      )}
+    </div>
+  );
+}
+
+
+In this example, we assume you have an array of user data, and each user object has properties like `id`, `name`, and `age`. The `useParams()` hook retrieves the `id` parameter value from the URL.
+
+Then, we use the `find()` method on the `users` array to locate the user object that has the matching `id`. If a user with that `id` is found, we display the user's information by rendering the relevant JSX elements. If no user is found, we display a message indicating that the user was not found.
+
+Note that this example assumes you have set up routing correctly and that the component is rendered when the URL matches the specified route.
+
+I hope this example helps you understand how to display information using `{ id }` obtained from `useParams()`. Let me know if you have any further questions!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+useSearchParams hook:
+
+
+The `useSearchParams` hook is a React hook provided by the React Router library. It allows you to access and manipulate the query parameters (search parameters) of the current URL in your React components.
+
+When you use the `useSearchParams` hook, it returns a tuple that consists of the current URL's search parameters and a function to modify them.
+
+Here's a simple explanation of how to use the `useSearchParams` hook:
+
+
+import { useSearchParams } from 'react-router-dom';
+
+function MyComponent() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Accessing search parameters
+  const query = searchParams.get('query');
+
+  // Updating search parameters
+  const updateSearch = (newQuery) => {
+    searchParams.set('query', newQuery);
+    setSearchParams(searchParams);
+  };
+
+  return (
+    <div>
+      <h2>Search</h2>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => updateSearch(e.target.value)}
+      />
+    </div>
+  );
+}
+
+
+In the example above, the `useSearchParams` hook is used to obtain the current search parameters of the URL. The `searchParams` variable contains the search parameters as a `URLSearchParams` object.
+
+You can access individual search parameters using methods provided by the `URLSearchParams` object. In the example, `query` is obtained using `searchParams.get('query')`.
+
+To update the search parameters, you can modify the `searchParams` object using its provided methods. In the example, the `updateSearch` function is called when the input field changes, updating the `query` search parameter.
+
+After modifying the `searchParams` object, you need to call `setSearchParams(searchParams)` to update the search parameters in the URL.
+
+This way, you can read and update the query parameters of the current URL using the `useSearchParams` hook.
+
+I hope this explanation helps! Let me know if you have any further questions.
+
+
+

@@ -1,0 +1,54 @@
+Creating & Routing an admin page: 
+First create an admin page in pages folder.
+
+App.js:
+
+import { Admin } from "../pages/Admin";
+
+function App() {
+	const user = false;
+
+	return (
+		<>
+		  <Routes>
+			<Route path="/admin" element={user ? <Admin /> : <PageNotFound />} />
+		  </Routes>
+)};
+
+
+
+so if the user turns out to be false/not admin, then go to PageNotFound, else go to Admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating a 404 page:
+
+
+
+App.js:
+First create PageNotFound.js in pages folder
+
+
+
+import { PageNotFound } from "../pages/PageNotFound";
+
+function App() {
+	const user = true;
+
+	return (
+		<>
+		  <Routes>
+			<Route path="*" element={<PageNotFound />} />
+		  </Routes>
+)};
+

@@ -1,0 +1,33 @@
+Yes, that's correct. When a component is exported using `export default`, it is considered a default export. In this case, when you import the component, you don't need to use curly braces and can import it directly as a default import.
+
+For example, if you have a component exported like this:
+
+```javascript
+export default function Home() {
+  // Component implementation
+}
+```
+
+You can import it without using curly braces:
+
+```javascript
+import Home from "./Home";
+```
+
+However, if the component is exported without the `default` keyword, it is considered a named export. In this case, when you import the component, you need to use curly braces and specify the exact name of the exported component.
+
+For example, if you have a component exported like this:
+
+```javascript
+export function Home() {
+  // Component implementation
+}
+```
+
+You need to import it using curly braces:
+
+```javascript
+import { Home } from "./Home";
+```
+
+By following these guidelines, you ensure that you import the correct type of export (default or named) and use the appropriate syntax in your import statements.
