@@ -1,0 +1,101 @@
+Think of a RESTful API as a way for computers to talk and share information, just like how you talk and share things with your friends.
+
+Imagine you have a toy box filled with different toys. Each toy has its own name, like a ball, a doll, or a car. When your friend wants to play with a specific toy, you can give them that toy by saying its name.
+
+Similarly, in a RESTful API, there are different "things" called resources, like books, articles, or user profiles. Each resource has its own unique name or identifier.
+
+When someone wants to get information about a specific resource, they can ask the API for it by using the resource's name or identifier, just like you give a toy to your friend by saying its name.
+
+Now, the "REST" part stands for "Representational State Transfer." It's a way of organizing and communicating with the API using certain rules.
+
+One of the important rules is that each resource should have a unique URL, just like each toy has its own special place in your toy box. This URL acts like the name of the resource, and by using it, you can ask the API for that specific resource.
+
+Another rule is that the API understands different actions or operations you can do with the resources. For example, you can ask the API to give you a list of all the books, or you can ask it to create a new book for you.
+
+So, a RESTful API is a way for computers to communicate and share information using unique names (URLs) for different resources, and it follows certain rules (like how toys have names and your friend asks for a specific toy).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REST vs. RESTful API
+
+
+Yes, there is a difference between "REST" and a "RESTful API."
+
+"REST" stands for "Representational State Transfer" and is an architectural style or set of principles for designing networked applications. It provides guidelines on how different components of a system can communicate and interact with each other.
+
+On the other hand, a "RESTful API" refers to an API (Application Programming Interface) that follows the principles of REST. It means that the API is designed and implemented in accordance with the REST principles.
+
+So, to put it simply, REST is a concept or architectural style, while a RESTful API is an implementation of that concept following the REST principles.
+
+When we say an API is "RESTful," it means that it adheres to the guidelines and principles of REST. These principles include using unique resource identifiers (URLs) to access resources, leveraging HTTP methods (such as GET, POST, PUT, DELETE) for different operations on resources, using a stateless client-server communication model, and other best practices for building scalable and interoperable web services.
+
+By designing a RESTful API, developers can create web services that are well-structured, predictable, and can be easily consumed by clients (such as web browsers, mobile apps, or other software systems).
+
+So, REST is the concept or architectural style, and a RESTful API is an implementation of that concept in the form of an API that follows the REST principles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+If you have created a mock API, whether it adheres to the principles of REST depends on how you have designed and implemented it. 
+
+To determine if your mock API is RESTful, you can evaluate whether it follows the key principles of REST:
+
+1. **Resource-based:** In REST, resources are the key entities that can be accessed and manipulated. Check if your mock API identifies and represents resources using unique URLs.
+
+2. **Uniform interface:** RESTful APIs should have a consistent and uniform interface, typically leveraging HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources. Verify if your mock API uses appropriate HTTP methods for different actions.
+
+3. **Stateless communication:** RESTful APIs should be stateless, meaning each request from the client should contain all the necessary information for the server to understand and process it. Confirm if your mock API does not rely on server-side state or session information.
+
+4. **Client-Server separation:** REST encourages a clear separation between the client (the application consuming the API) and the server (the application providing the API). Ensure that your mock API maintains this separation.
+
+If your mock API adheres to these principles and follows the recommended practices of REST, it can be considered RESTful. However, if it deviates significantly from these principles or uses a different design approach, it may not strictly qualify as RESTful.
+
+Remember, even if your mock API doesn't strictly adhere to REST principles, it can still serve as a useful tool for simulating API behavior and testing client applications.

@@ -1,0 +1,144 @@
+useRef can store information so you can use that information for later. For example, let's say you have a button and you want to store the info of how many times it has been clicked. You would use useRef hook to store the count, and you can display it later. 
+
+
+
+Imagine you have a magic wand that can remember something for you. Whenever you point your wand at something and say "Remember this!", it will store that thing in a special place just for you. Later, when you want to use or look at what you remembered, you can ask your wand, and it will give you that thing back.
+
+In React, the `useRef` hook is like your magic wand. It helps you remember and keep track of things in your components.
+
+Sometimes in your React components, you want to store a value or a reference to something. It could be a number, a piece of text, or even a reference to a specific element on the screen.
+
+With the `useRef` hook, you can create a special reference that remembers something for you. You can think of it as a placeholder for something you want to keep track of.
+
+Here's an example: Let's say you have a button in your component, and you want to count how many times someone clicks on it. You can use the `useRef` hook to create a reference that keeps track of the count for you.
+
+Whenever the button is clicked, you can use the `useRef` reference to update the count. You can also access the current value of the reference whenever you need it, like showing the count on the screen.
+
+So, in short, the `useRef` hook helps you remember and keep track of things in your React components. It's like your magic wand that stores something for you and lets you access it whenever you want.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+useRef vs. useState
+
+
+
+You're absolutely right! The `useRef` hook and the `useState` hook in React are similar in some ways, but they have different purposes.
+
+When you use the `useState` hook, you're indeed storing a variable and updating its value using the setter function, typically named with "set" followed by the variable name. The state variable managed by `useState` is meant to hold data that can change and trigger re-rendering of your component.
+
+On the other hand, the `useRef` hook is primarily used for keeping a reference to something, like an element in the DOM (the structure of a webpage). It doesn't trigger re-renders when its value changes. It's often used for accessing or modifying DOM elements directly, or for storing any mutable value that you want to persist across re-renders without causing a re-render.
+
+In simpler terms, `useState` is for managing data that affects your component's rendering, while `useRef` is for holding references to things or mutable values that don't necessarily trigger re-renders.
+
+So, in summary, `useState` helps you manage and update variables that affect rendering, while `useRef` helps you hold references to things or store mutable values without causing re-renders. They serve different purposes in React.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Certainly! Here's a simple real-world scenario where the `useRef` hook can be useful:
+
+Let's say you have a form in your React application, and you want to focus on the first input field when the form is loaded. You can achieve this using the `useRef` hook.
+
+First, you would create a reference using `useRef` and assign it to the input field you want to focus on. Then, in the `useEffect` hook, you can use the reference to access the input field and call the `focus` method to bring focus to that field.
+
+Here's an example code snippet to illustrate this:
+
+
+import React, { useRef, useEffect } from 'react';
+
+function MyForm() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);                       //empty dependency array means it will run once
+
+  return (
+    <form>
+      <input type="text" ref={inputRef} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+
+In this example, the `useRef` hook is used to create the `inputRef` reference. The `useEffect` hook is used with an empty dependency array `[]`, which means it will run only once when the component is first rendered.
+
+Inside the `useEffect` hook, we use `inputRef.current` to access the DOM element that the reference is pointing to, and then we call the `focus` method on it to bring focus to the input field.
+
+By using `useRef` and `useEffect` together, we can ensure that when the form is loaded, the input field is automatically focused, making it convenient for the user to start typing right away.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

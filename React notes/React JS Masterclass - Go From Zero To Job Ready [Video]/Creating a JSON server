@@ -1,0 +1,62 @@
+https://www.npmjs.com/package/json-server
+
+
+
+Create a folder called data.
+Inside of data folder, create a file called db.json
+
+
+In db.json: 
+
+{
+    "products": [
+        {
+            "id": 10001,
+            "name": "Basics To Advanced in React",
+            "price": 29,
+            "in_stock": true
+        },
+        {
+            "id": 10002,
+            "name": "The Complete Guide to Backend Development",
+            "price": 35,
+            "in_stock": false
+        },
+        {
+            "id": 10003,
+            "name": "Calculus",
+            "price": 15,
+            "in_stock": false
+        },
+        {
+            "id": 10004,
+            "name": "Acting 3",
+            "price": 20,
+            "in_stock": true
+        }
+    ]
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+new terminal: 
+
+json-server --watch data/db.json --port 8000
+
+
+
+
+
+
+
+
+can use different endpoints in URL. check out website link on top. 
