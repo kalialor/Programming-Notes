@@ -1,0 +1,113 @@
+The `useCallback` hook is used in React to memoize functions. It is primarily used to optimize performance by preventing unnecessary re-renders of child components that rely on functions passed as props.
+
+Here's a simple explanation of how `useCallback` works:
+
+1. When you define a function inside a component, it is recreated on every render. This means that if you pass that function as a prop to a child component, the child component will treat it as a new function prop each time the parent component re-renders, even if the function logic remains the same.
+
+2. This can potentially cause unnecessary re-renders of the child component, especially if it uses the `React.memo` or `PureComponent` optimizations to prevent re-renders when props remain the same.
+
+3. By using the `useCallback` hook, you can memoize a function and ensure it is only recreated if its dependencies change. It returns a memoized version of the function.
+
+4. When you wrap a function with `useCallback`, it will be re-created only when the specified dependencies (passed as the second argument) change. If the dependencies remain the same, the previously memoized function is returned.
+
+5. By using the memoized function in the parent component and passing it as a prop to the child component, you can prevent unnecessary re-renders of the child component when the function itself hasn't changed.
+
+Here's a simple example to illustrate the usage of `useCallback`:
+
+
+
+
+import React, { useCallback } from 'react';
+
+function ParentComponent() {
+  const handleButtonClick = useCallback(() => {
+    // Handle button click logic
+    console.log('Button clicked');
+  }, []);
+
+  return (
+    <div>
+      <ChildComponent onClick={handleButtonClick} />
+    </div>
+  );
+}
+
+function ChildComponent({ onClick }) {
+  // Child component rendering logic
+  return <button onClick={onClick}>Click me</button>;
+}
+
+
+
+
+In this example, the `handleButtonClick` function is wrapped with `useCallback` and passed as a prop `onClick` to the `ChildComponent`. The `handleButtonClick` function will only be recreated if the dependencies (an empty array in this case) change.
+
+By using `useCallback`, the `handleButtonClick` function is memoized, and the `ChildComponent` won't unnecessarily re-render if the `ParentComponent` re-renders with the same `handleButtonClick` function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What does memoize mean?
+
+
+"Memoization" is a technique used in programming to cache the results of expensive function calls and avoid redundant computations. It involves storing the computed results of a function based on its inputs, so that subsequent calls with the same inputs can be retrieved from the cache instead of recomputing them.
+
+In simple terms, memoization remembers the output of a function for a given set of inputs, allowing subsequent calls to the same function with the same inputs to return the cached result directly without re-evaluating the function.
+
+Memoization can be beneficial when a function is called multiple times with the same arguments or when the function's computation is time-consuming. By caching and reusing the results, it can significantly improve performance by avoiding repetitive calculations.
+
+Here's a basic example of memoization in JavaScript:
+
+
+
+function memoize(fn) {
+  const cache = {};
+
+  return function(...args) {
+    const key = JSON.stringify(args);
+
+    if (cache[key]) {
+      return cache[key];
+    }
+
+    const result = fn(...args);
+    cache[key] = result;
+    return result;
+  };
+}
+
+function expensiveFunction(n) {
+  console.log('Computing...');
+  return n * 2;
+}
+
+const memoizedFunction = memoize(expensiveFunction);
+
+console.log(memoizedFunction(5));  // First call, computes and caches the result
+console.log(memoizedFunction(5));  // Retrieves the cached result directly
+console.log(memoizedFunction(7));  // Computes for a different input and caches the result
+console.log(memoizedFunction(7));  // Retrieves the cached result for the second input
+
+
+In this example, the `memoize` function takes in an expensive function `fn` and returns a memoized version of it. The memoized function caches the results of `fn` based on the provided arguments.
+
+When the memoized function is called with the same arguments, it checks if the result is already in the cache. If it is, it returns the cached result. Otherwise, it computes the result, caches it, and returns it. Subsequent calls with the same arguments retrieve the cached result without recomputing.
+
+Memoization is a powerful technique to optimize functions that have expensive computations or repetitive calls with the same inputs. It can be used in various scenarios to improve performance and reduce redundant work.
+
+I hope this explanation clarifies the concept of memoization for you. Let me know if you have further questions!
