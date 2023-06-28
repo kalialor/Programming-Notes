@@ -1,5 +1,7 @@
 https://www.npmjs.com/package/json-server
 
+json-server --watch data/db.json --port 8000
+
 
 
 Create a folder called data.

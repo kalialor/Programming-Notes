@@ -1,0 +1,118 @@
+https://youtu.be/WXsD0ZgxjRw
+Postman Academy: https://academy.postman.com/path/postman-api-fundamentals-student-expert/intro-to-apis-and-postman/917
+
+
+
+HTTP(Hypertext Transfer Protocol)-is a stateless protocol. 
+
+GET-getting data from server. 
+POST-making a post
+
+
+
+Contraints for an API to be considered RESTful:
+
+Client-Server Architecture
+Statelessness-remembering data
+Cacheability
+Layered System
+Code on Demand
+Uniform Interface
+
+
+
+
+HTTP Verbs               CRUD
+GET			READ          Retrieves Resources
+POST			Create        Creates resources
+PUT			Update       Changes and/or replaces resources or collections
+Patch		
+DELETE			Delete       Deletes resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+curl is a command that we can run from our terminal
+you need to install curl in terminal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Networking term	                         Description	                                        Restaurant analogy
+Client                   	        The requester. Ex: browser, web app, mobile app	            Customer
+API	                               Simplified interface for interacting with the backend          Waiter
+Server	                                    The backend where the processing happens	             Kitchen
+
+
+
+
+
+
+
+
+
+Collections are places to organize your API requests in Postman.
+
+
+
+
+
+
+
+
+
+First things first: a librarian must know how to view all the books in the library catalog.
+
+According to the API documentation, you can get all the books in the library by making a request to GET https://library-api.postmanlabs.com/books. Here, GET is the request method and the url is the request URL. We'll cover what that means soon - but first let's get our hands dirty with our first request!
+
+
+
+
+Request methods
+When we make an HTTP call to a server, we specify a request method that indicates the type of operation we are about to perform. These are also called HTTP verbs.
+
+Here are some common HTTP request methods that correspond to the CRUD operations mentioned earlier. You can see a list of more methods here.
+
+Method name	                  Operation
+GET	                        Retrieve data (Read)
+POST	                    Send data (Create)
+PUT/PATCH	                 Update data (Update)
+
+* PUT usually replaces an entire resource, whereas PATCH usually is for partial updates
+DELETE	Delete data (Delete)
+
+
+
+
+
+
+
+
+
+
+
+Remember that the minimum ingredients you need to make a request are:
+
+a request method (GET/POST/PUT/PATCH/DELETE, etc)
+a request URL
+
+Some APIs allow you to refine your request further with key-value pairs called query parameters. 

@@ -1,0 +1,23 @@
+https://youtu.be/-JNRQ5HjNeI
+
+
+
+box-shadow: inset 0px 0x 0px 0px rgba(0,0,0, .25);
+
+can place shadows inside of the element
+1st number is the horizontal offset
+2nd number is the vertical offset
+3rd number is the blur-radius(size of blur)(big number will make the shadow appear softer)
+		-does not accept negative values
+4th number is the spread
+	-spreading the shadow
+	-can take negative numbers
+the last number in the rgba value is opacity
+
+
+
+
+ex: 
+   box-shadow: 0px 20px;
+
+the shadow will appear on the bottom

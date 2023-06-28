@@ -1,0 +1,91 @@
+Tailwind Docs: https://tailwindcss.com/
+View installation guide. If using React then install using CLI 
+If using just HTML then use CDN
+
+
+
+https://tailwindcss.com/docs/
+
+
+margin/padding: 
+
+t = top
+b = bottom
+l= left
+r = right 
+
+x= all horizontal
+y= all vertical
+
+if want to apply for all directions, then leave blank. ex. p-4
+
+
+
+
+
+
+
+
+Responsive Design:
+
+https://tailwindcss.com/docs/responsive-design#overview
+
+
+example: md: bg-sky-700
+
+this means any size after the breakpoint (768 px) (see docs for breakpoints) then bg color will be sky
+
+
+
+
+example: lg: bg-red-500 
+ 
+this means any size after the breakpoint (1024 px)then bg color will be red
+
+
+
+
+example: md: max-lg: bg-red-500
+
+from md - lg background color will be red     (768px-1024px)
+
+
+
+
+
+Mobile Design:
+
+Don't use 'sm' for mobile
+
+
+
+
+
+
+
+
+
+
+
+
+for React Projects: 
+
+tailwind.config.js is where you define project style theme
+
+ex.
+
+module.exports = {
+	theme: {
+	    screens: {
+		sm: '480px'
+		md: '768px'
+		lg: '976px'
+		xl: '1440px'
+}
+
+
+
+
+
+
+
