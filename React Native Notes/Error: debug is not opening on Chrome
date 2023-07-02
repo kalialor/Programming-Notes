@@ -1,0 +1,10 @@
+https://github.com/facebook/react-native/issues/34624
+
+
+
+:hermes_enabled => false
+in podfile
+
+then Install pods cd ios && pod install && cd ..
+Build App npx react-native run-ios
+worked for me

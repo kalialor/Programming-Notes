@@ -1,0 +1,112 @@
+https://www.youtube.com/watch?v=obH0Po_RdWk&t=1414s
+
+Starting an App using Expo
+
+Type in terminal: 
+
+npx create-expo-app WeatherApp
+
+navigate to project folder then type in npm start
+
+scan QR code
+
+
+Open Expo Go app on phone
+
+Then open project in VS code and start project!
+
+
+
+you need to install eslint:
+npm install esline --save -dev
+npx eslint --init
+
+
+
+
+then,
+
+npm install @react-native-community/eslint-config --save-dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Install Prettier:
+
+npm install --save-dev --save-exact prettier
+
+
+
+
+create a file for the config for prettier in root project directory
+
+touch .prettierrc.js
+
+
+
+
+
+
+
+https://prettier.io/docs/en/configuration.html
+.prettierrc.js:
+
+module.exports = {
+  arrowParens: 'avoid',
+  bracketSameLine: true,
+  bracketSpacing: true,
+  singleQuote: true,
+  trailingComma: 'none',
+  tabWidth: 2,
+  useTabs: false,
+  semi: false
+};
+
+
+
+
+
+
+
+
+
+
+Add eslint script in package.json:
+
+"lint": "eslint. "
+
+in terminal: eslint run lint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

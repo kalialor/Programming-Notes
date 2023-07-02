@@ -1,0 +1,20 @@
+https://www.youtube.com/watch?v=obH0Po_RdWk&t=1414s
+
+
+make sure you have ruby, cocoapods, node, & watchman installed
+
+
+
+Terminal:
+cd React Projects
+npx react-native init WeatherAppProject
+
+
+
+
+
+create another tab in the terminal:
+npx react-native start (need to run this before run-ios)
+
+
+npx react-native run-ios
