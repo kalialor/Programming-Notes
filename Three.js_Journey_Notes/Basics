@@ -1,0 +1,150 @@
+Creating a scene & item:
+const scene = new THREE.Scene()
+
+const sphereGeometry = new THREE.SphereGeometry(1.5, 32, 32)
+
+We always need these 4 elements to produce something on the screen: 
+-Scene
+-Object
+-Camera
+-Renderer
+
+a mesh is the cominbation of a geometry(the shape) and a material (how it looks)
+
+A Box & material:
+const geometry = new THREE.BoxGeometry(1, 1, 1)
+const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const mesh = new THREE.Mesh(geometry, material)
+
+scene.add(mesh)
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Camera: 
+
+The camera is not visible. You can have multiple cameras. 
+
+PerspectiveCamera-making close objects look more prominent than far objects
+	-it takes 2 parameters: field of view, aspect ratio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Position an object:
+
+mesh.position.x = 0.3    //(left/right)
+mesh.position.y = -0.6  //(upward)
+mesh.position.z = 1     //(forward/backward)
+
+
+
+
+
+
+Sizing an object:
+
+mesh.scale.x = 2
+mesh.scale.y = 0.25
+mesh.scale.z = 0.5
+
+
+
+
+
+
+
+
+Rotating an Object: 
+	-2 ways (rotation property and quaternion)
+
+the rotation property also has x, y, and z properties, but instead of a Vector3, it's a Euler. When you change the 
+x, y, and z properties of a Euler, you can imagine putting a stick through your object's center in the axis's 
+direction and then rotating that object on that stick.
+
+If you spin on the y axis, you can picture it like a carousel.
+If you spin on the x axis, you can imagine that you are rotating the wheels of a car you'd be in.
+And if you rotate on the z axis, you can imagine that you are rotating the propellers in front of an aircraft you'd be in.
+The value of these axes is expressed in radians. If you want to achieve half a rotation, you'll have to write 
+something like 3.14159... You probably recognize that number as π. In native JavaScript, you can end up with an 
+approximation of π using Math.PI.
+
+mesh.rotation.x = Math.PI * 0.25
+mesh.rotation.y = Math.PI * 0.25
+
+
+
+
+
+
+
+
+
+Quaternion (more prefered way to rotate objects)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Group items when it's the same items. saves you from editing each item indivualy. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
