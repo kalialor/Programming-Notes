@@ -1,0 +1,4 @@
+Created using Vite:
+
+npm create vite@latest ./ -- --template react
+ 
