@@ -1,0 +1,89 @@
+https://www.youtube.com/watch?v=8pzIuLFuv6U
+
+
+In the app folder, create a folder name for the page you want to create. Ex: 'about'
+
+In that folder, create file: page.tsx (page.js for non-typescript)
+
+
+page.tsx:
+
+export default function About() {
+    return (
+        <div>
+            <h1>About</h1>
+        </div>
+ )};
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Nested pages
+ex: http://localhost:3000/about/us   & http://localhost:3000/about/someone
+
+
+create 2 separate folders: 'us' 'someone'
+create 2 page.tsx one for 'us' & 'someone' 
+
+
+page.tsx:
+
+export default function AboutUs() {
+    return (
+        <div>
+            <h1>About Us</h1>
+        </div>
+ )};
+
+
+
+page.tsx:
+
+export default function AboutSomeone() {
+    return (
+        <div>
+            <h1>About Someone</h1>
+        </div>
+ )};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Creating a Params Route
+http://localhost:3000/about/5
+
+
+in 'about' folder, create '[id]' folder
+in '[id]' folder, create 'page.tsx' file
+
+
+
+page.tsx:
+
+export default function AboutWithId({ params }: any) {
+    return (
+        <div>
+            <h1>This is the about page with ID: {params.id}</h1>
+        </div>
+ )};
+
+
+
+
+

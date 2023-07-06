@@ -1,0 +1,27 @@
+In Next.js, the terms "client-side components" and "server-side components" refer to different rendering strategies used for different parts of your web application.
+
+Client-side components are components that are rendered and executed on the client-side, which means they run in the user's web browser. These components are typically used for dynamic and interactive features that require user interaction or real-time updates. When the page is loaded, the initial rendering of client-side components is handled by JavaScript running in the browser.
+
+Server-side components, on the other hand, are components that are rendered on the server-side, meaning they are processed and generated on the server before being sent to the user's browser. These components are useful for content that doesn't change frequently and doesn't require user-specific data. Server-side rendering helps provide a pre-rendered and fully formed HTML page to the user, which can improve initial load time and search engine optimization.
+
+Next.js allows you to choose which parts of your application should be rendered on the server-side or the client-side. You can use the `getServerSideProps` function to fetch data and perform server-side rendering for specific components, ensuring that the data is fetched and rendered on the server before the page is sent to the browser. For other components that require interactivity or real-time updates, you can use client-side rendering techniques within your Next.js application.
+
+By combining both client-side and server-side components strategically, you can optimize your application's performance, enhance user experience, and achieve a balance between dynamic functionality and initial page load speed.
+
+
+
+
+
+Client: 
+
+React Hooks
+with event listeners such s onClick()
+There are custom hooks that depend on state or effects
+
+
+Server: 
+Sensitive information needs to be stored (tokens, API keys, etc)
+You need to access backend resources directly
+There are large dependencies
+
+

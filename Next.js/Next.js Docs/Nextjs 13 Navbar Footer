@@ -1,0 +1,44 @@
+https://www.youtube.com/watch?v=8pzIuLFuv6U
+
+
+in app folder, create folder called 'components' 
+in components folder, create file called 'navbar.tsx'
+
+
+
+navbar.tsx:
+
+import Link from 'next/link'
+
+export default function Navbar() {
+  return (
+    <div>
+        <Link href='/'>Home</Link>
+        <Link href='/aboutus'>About Us</Link>
+        <Link href='/contactus'>Contact Us</Link>
+    </div>
+  )
+}
+
+
+
+
+
+
+
+Go into layout.tsx and add in <Navbar /> in return statement
+this way the navbar will display no matter the page
+
+  <html lang="en">
+      <body className={inter.className}>
+        <Navbar />
+        {children}</body>
+    </html>
+    
+    
+
+
+
+
+
+Do same process for Footer

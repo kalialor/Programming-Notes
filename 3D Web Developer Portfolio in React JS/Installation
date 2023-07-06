@@ -1,4 +1,46 @@
 Created using Vite:
 
 npm create vite@latest ./ -- --template react
- 
+
+
+TailwindCSS:
+
+npm install -D tailwindcss
+npx tailwindcss init
+
+
+npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion react-router-dom
+
+
+
+The command you provided, `npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion react-router-dom`, is used to install several packages for a JavaScript project using the npm package manager.
+
+Let's break down the packages being installed:
+
+1. `@react-three/fiber` and `@react-three/drei`: These are packages related to working with 3D graphics in React applications using the Three.js library. They provide components and utilities for creating and rendering 3D scenes.
+
+2. `maath`: It seems like `maath` might be a typo or a package specific to your project. If it's a valid package, it would be installed as well.
+
+3. `react-tilt`: This package enables tilt effect animations for React components. It can be used to add a subtle parallax effect or interactive tilt behavior to elements on your website or application.
+
+4. `react-vertical-timeline-component`: This package provides a vertical timeline component for React. It allows you to display events, milestones, or any sequential data in a vertically stacked timeline format.
+
+5. `@emailjs/browser`: This package provides a client-side email sending functionality for JavaScript applications. It allows you to send emails directly from your app using your own email service provider.
+
+6. `framer-motion`: This package is a popular animation library for React. It provides an easy-to-use API for creating and managing complex animations, transitions, and interactive effects in your React components.
+
+7. `react-router-dom`: This package provides routing capabilities for React applications. It allows you to define different routes in your app, enabling navigation between different pages or views.
+
+By running the `npm install` command with these package names, you will download and install the specified packages and their dependencies into your project. This allows you to use the functionality and features provided by these packages in your JavaScript application.
+
+
+
+
+
+
+
+
+
+
+
+
