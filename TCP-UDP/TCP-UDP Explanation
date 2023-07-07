@@ -1,0 +1,9 @@
+Let's talk about UDP and TCP. Imagine you want to send a message to your friend who lives far away, and you want to make sure the message gets to them correctly.
+
+UDP and TCP are like different ways to send that message. UDP stands for User Datagram Protocol, and TCP stands for Transmission Control Protocol.
+
+UDP is like sending a message in a bottle. You put your message in the bottle, throw it in the ocean, and hope it reaches your friend. With UDP, you send small pieces of data called "datagrams" without worrying too much about whether they get to the destination in order or if they arrive at all. It's fast, but there's no guarantee that all the pieces will get there or that they'll be in the right order.
+
+TCP, on the other hand, is like sending your message in multiple envelopes with a tracking system. You divide your message into smaller parts, put them in separate envelopes, and number them. Then you send them one by one, and your friend puts them in the right order when they receive them. If an envelope gets lost along the way, you can send it again. TCP is more reliable but a little slower because of all the extra steps it takes to make sure everything gets there correctly.
+
+So, UDP is like a fast but less reliable way to send messages, while TCP is a slower but more reliable way to make sure all the pieces of your message get to the destination correctly and in order.

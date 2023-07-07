@@ -15,11 +15,13 @@ By combining both client-side and server-side components strategically, you can 
 Client: 
 
 React Hooks
+buttons, search (interactive)
 with event listeners such s onClick()
 There are custom hooks that depend on state or effects
 
 
 Server: 
+Non-interactive(navbar, sidebar)
 Sensitive information needs to be stored (tokens, API keys, etc)
 You need to access backend resources directly
 There are large dependencies
