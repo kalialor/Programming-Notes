@@ -1,0 +1,23 @@
+else if statement:
+
+let content;
+if (isLoggedIn) {
+  content = <AdminPanel />;
+} else {
+  content = <LoginForm />;
+}
+return (
+  <div>
+    {content}
+  </div>
+);
+
+
+
+
+
+Ternary Operator:
+
+<div>
+    { isLoggedin ? ( <AdminPanel /> ) : ( <LoginForm /> )} 
+</div>

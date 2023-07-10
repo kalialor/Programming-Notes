@@ -1,0 +1,52 @@
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+];
+
+
+
+
+
+
+const listItems = products.map(product => <li key={product.id}>{product.title}</li> );
+
+return (
+    <ul>
+         {listItems}
+    </ul>
+    );
+    
+    
+
+
+
+
+
+Notice how <li> has a key attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
+
+
+
+
+
+
+
+
+map & tenary operator:
+
+const pets = [
+  { name: "Suzy", isDog: true, id: 1 },
+  { name: "Spot", isDog: true, id: 2 },
+  { name: "Oliver", isDog: true, id: 3 },
+  { name: "Marble", isDog: false, id: 4 }
+];
+
+export default function Pets() {
+  const listPets = pets.map((pet) => (
+    <li key={pet.id} style={{ color: pet.isDog ? "blue" : "red" }}>
+      {pet.name}
+    </li>
+  ));
+
+  return <ul>{listPets}</ul>;
+}
