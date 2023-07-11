@@ -25,5 +25,4 @@ Non-interactive(navbar, sidebar)
 Sensitive information needs to be stored (tokens, API keys, etc)
 You need to access backend resources directly
 There are large dependencies
-
-
+Cannot use useState & useEffect only on Client components
