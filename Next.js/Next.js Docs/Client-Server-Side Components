@@ -26,3 +26,8 @@ Sensitive information needs to be stored (tokens, API keys, etc)
 You need to access backend resources directly
 There are large dependencies
 Cannot use useState & useEffect only on Client components
+
+
+
+
+****if you put api code into component, make sure you put 'use Client' at top to render in the browser. or else it will be a server-side component and it will render in the console.
